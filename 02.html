@@ -65,6 +65,7 @@
     /* 橫幅 Banner */
     .banner-container { width: 100%; max-width: 100%; margin: 0 auto; padding-top: 0; }
     .banner-img { width: 100%; height: auto; display: block; object-fit: cover; max-height: 400px; }
+    .banner-img:focus { outline: 4px dashed #2B358C; outline-offset: -4px; filter: brightness(0.85); background-color: rgba(0,0,0,0.1); }
     
     /* 頁尾 Footer */
     .footer { background: #333; color: #fff; margin-top: auto; width: 100%; }
@@ -176,6 +177,18 @@
         .col-center { width: 70% !important; flex: 0 1 70% !important; }
     }
     .col-right { display: none !important; }
+    a.access-key {
+        background: transparent !important;
+        background-color: transparent !important;
+        color: rgba(0,0,0,0.35) !important;
+        padding: 1px 6px !important;
+        font-size: 0.72em !important;
+        line-height: 1.4 !important;
+        display: inline-block !important;
+        text-align: left !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
 </style>
 </head><body>
 <a href="#main_content" class="skip-link">跳到主要內容區塊</a>
@@ -231,10 +244,10 @@
 
 </ul></div></nav>
 
-<div class="banner-container"><img src="images/banner.png" alt="學校橫幅" class="banner-img" /></div>
+<div class="banner-container"><img src="images/banner.png" alt="學校橫幅" class="banner-img" tabindex="0" /></div>
 <div class="container-top"><div style="width: 100%; margin-bottom: -5px;"><a href="#at" id="at" accesskey="T" title="上方連結區" class="access-key">:::</a></div>
-<div class="block-card block-full-width soft-border-card" id="blk-top-0" style="border: 1px solid #dde3ec; border-radius: 10px; background: #f9fafc; overflow: hidden;">
-<h2 class="block-title sr-only" tabindex="-1">跑馬燈測試</h2>
+<div class="block-card block-full-width shadow-card" id="blk-top-0" style="box-shadow: 0 4px 12px rgba(0,0,0,0.1); border: none; padding: 20px;">
+<h2 class="block-title" style="height:0;padding:0;margin:0;overflow:hidden;font-size:0;border:0;" tabindex="-1">跑馬燈測試</h2>
 <style>
 @keyframes marquee-scroll-top-0 {
     0%   { transform: translateX(0%); }
@@ -293,7 +306,7 @@
 </div>
 <div class="container">
 <aside class="col-left"><a href="#al" id="al" accesskey="L" title="左側區塊" class="access-key">:::</a>
-<div class="block-card soft-border-card" id="blk-left-0" style="border: 1px solid #dde3ec; border-radius: 10px; background: #f9fafc; overflow: hidden;">
+<div class="block-card shadow-card" id="blk-left-0" style="box-shadow: 0 4px 12px rgba(0,0,0,0.1); border: none; padding: 20px;">
 <h2 class="block-title" style="color: #FFFFFF; background-color: #2B358C; padding: 10px 15px; border-radius: 5px; text-align: center;" tabindex="-1">數位學習相關網站</h2>
 <ul class="link-list-container">
 <li class="link-list-entry">
@@ -325,7 +338,7 @@
 </li>
 </ul>
 </div>
-<div class="block-card soft-border-card" id="blk-left-1" style="border: 1px solid #dde3ec; border-radius: 10px; background: #f9fafc; overflow: hidden;">
+<div class="block-card shadow-card" id="blk-left-1" style="box-shadow: 0 4px 12px rgba(0,0,0,0.1); border: none; padding: 20px;">
 <h2 class="block-title" style="color: #FFFFFF; background-color: #2B358C; padding: 10px 15px; border-radius: 5px; text-align: center;" tabindex="-1">資安法規相關連結</h2>
 <ul class="link-list-container">
 <li class="link-list-entry">
@@ -346,7 +359,7 @@
 </aside>
 <main class="col-center" id="main_content" tabindex="-1" style="outline: none;"><a href="#ac" id="ac" accesskey="C" title="主要內容區" class="access-key">:::</a>
 <div class="center-content-wrapper">
-<div class="block-card" style="border: 1px solid #dde3ec; border-radius: 10px; background: #f9fafc; overflow: hidden;"><h1 class="block-title" style="color: #FFFFFF; background-color: #2B358C; padding: 10px 15px; border-radius: 5px; text-align: center;" tabindex="-1">教學電腦</h1>
+<div class="block-card" style="box-shadow: 0 4px 12px rgba(0,0,0,0.1); border: none; padding: 20px;"><h1 class="block-title" style="color: #FFFFFF; background-color: #2B358C; padding: 10px 15px; border-radius: 5px; text-align: center;" tabindex="-1">教學電腦</h1>
 
 <div class="html-content"><div class="instruction-block">
     <h2>班級教室、科任教室及科任教師電腦</h2>
@@ -403,5 +416,34 @@
     var mybutton = document.getElementById("backToTop");
     window.onscroll = function() { if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) mybutton.style.display = "block"; else mybutton.style.display = "none"; };
     mybutton.addEventListener('click', function(e) { e.preventDefault(); window.scrollTo({top: 0, behavior: 'smooth'}); var skipLink = document.querySelector('.skip-link'); if (skipLink) skipLink.focus(); else { document.body.tabIndex = -1; document.body.focus(); } });
+</script>
+<script>
+(function(){
+  if(window.self !== window.top){
+    var _h = function(){
+      /* 隱藏所有非內容元素 */
+      var hideSelectors = [
+        '.top-nav','.banner-container','.header','.navbar','.nav-container',
+        '.container-top','.container-bottom',
+        '.footer','.footer-container','.footer-copyright',
+        '.col-left','.col-right',
+        '.skip-links','.skip-link',
+        'a.access-key','.access-key',
+        '#at','#ab','#al','#ar','#ac'
+      ];
+      hideSelectors.forEach(function(s){
+        document.querySelectorAll(s).forEach(function(el){ el.style.cssText += ';display:none!important'; });
+      });
+      /* 讓中欄展開並移除多餘 padding */
+      var center = document.querySelector('.col-center');
+      if(center){ center.style.cssText += ';width:100%!important;flex:1 1 100%!important;max-width:none!important'; }
+      var cont = document.querySelector('.container');
+      if(cont){ cont.style.cssText += ';padding:0!important;margin:0!important'; }
+      document.body.style.cssText += ';margin:0!important;padding:0!important;background:transparent!important';
+    };
+    if(document.readyState==='loading'){ document.addEventListener('DOMContentLoaded',_h); }
+    else { _h(); }
+  }
+})();
 </script>
 </body></html>
