@@ -224,21 +224,21 @@
 <li class="nav-item">
 <a href="#" target="_self" class="nav-link" aria-haspopup="true">資訊設備使用說明 ▼</a>
 <div class="dropdown-content">
-<a href="01.html" target="_self" data-title="觸控電視" aria-label="觸控電視">觸控電視</a>
-<a href="02.html" target="_self" data-title="教學電腦" aria-label="教學電腦">教學電腦</a>
+<a href="01.html#ac" target="_self" data-title="觸控電視" aria-label="觸控電視">觸控電視</a>
+<a href="02.html#ac" target="_self" data-title="教學電腦" aria-label="教學電腦">教學電腦</a>
 <a href="https://esa.ntpc.edu.tw/web-maintain/templates/maintain_pub.html?schno=014767" target="_blank" data-title="資訊設備報修" aria-label="資訊設備報修">資訊設備報修</a>
 </div>
 </li>
 <li class="nav-item">
 <a href="#" target="_self" class="nav-link" aria-haspopup="true">生生用平板 ▼</a>
 <div class="dropdown-content">
-<a href="03.html" target="_self" data-title="iPad進行教學注意事項" aria-label="iPad進行教學注意事項">iPad進行教學注意事項</a>
+<a href="03.html#ac" target="_self" data-title="iPad進行教學注意事項" aria-label="iPad進行教學注意事項">iPad進行教學注意事項</a>
 </div>
 </li>
 <li class="nav-item">
 <a href="#" target="_self" class="nav-link" aria-haspopup="true">資訊安全 ▼</a>
 <div class="dropdown-content">
-<a href="04.html" target="_self" data-title="資安法規" aria-label="資安法規">資安法規</a>
+<a href="04.html#ac" target="_self" data-title="資安法規" aria-label="資安法規">資安法規</a>
 </div>
 </li>
 
@@ -536,8 +536,8 @@
     });
     
     var inner = document.getElementById("cr-inner-center-1");
-    wrapper.addEventListener('mouseover', function() { if(isPlaying) { clearInterval(timer); timer=null; } });
-    wrapper.addEventListener('mouseout', function() { if(isPlaying) { startPlay(); } });
+    wrapper.addEventListener('mouseenter', function() { if(isPlaying) { clearInterval(timer); timer=null; } });
+    wrapper.addEventListener('mouseleave', function() { if(isPlaying) { startPlay(); } });
     wrapper.addEventListener('focusin', function() { if(isPlaying) { clearInterval(timer); timer=null; } });
     wrapper.addEventListener('focusout', function() { if(isPlaying) { startPlay(); } });
     
