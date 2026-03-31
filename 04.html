@@ -371,7 +371,7 @@
 <main class="col-center" id="main_content" tabindex="-1" style="outline: none;"><a href="#ac" id="ac" accesskey="C" title="主要內容區" class="access-key">:::</a>
 <div class="center-content-wrapper">
 <nav aria-label="Breadcrumb" style="width:100%; margin-bottom: 20px; font-size: 0.95em;"><a href="./" style="color:#2B358C; text-decoration:none;">首頁</a> &gt; <span aria-current="page">資安法規</span></nav>
-<div class="block-card" style="border: 1px solid #dde3ec; border-radius: 10px; background: #f9fafc; overflow: hidden;"><h1 class="block-title" style="color: #FFFFFF; background-color: #2B358C; padding: 10px 15px; border-radius: 5px; text-align: center;" tabindex="-1">資安法規</h1>
+<div class="block-card" tabindex="0" style="border: 1px solid #dde3ec; border-radius: 10px; background: #f9fafc; overflow: hidden;"><h1 class="block-title" style="color: #FFFFFF; background-color: #2B358C; padding: 10px 15px; border-radius: 5px; text-align: center;" tabindex="-1">資安法規</h1>
 
 <div class="html-content"><div class="instruction-block">
     <h2>資安法規常用法條</h2>
@@ -456,6 +456,7 @@
     var mybutton = document.getElementById("backToTop");
     window.onscroll = function() { if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) mybutton.style.display = "block"; else mybutton.style.display = "none"; };
     mybutton.addEventListener('click', function(e) { e.preventDefault(); window.scrollTo({top: 0, behavior: 'smooth'}); var skipLink = document.querySelector('.skip-link'); if (skipLink) skipLink.focus(); else { document.body.tabIndex = -1; document.body.focus(); } });
+    window.addEventListener('load', function() { if(window.location.hash) { var t = document.querySelector(window.location.hash); if(t) { t.focus(); } } });
 </script>
 <script>
 (function(){
