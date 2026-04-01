@@ -364,25 +364,21 @@
 </div>
 </div>
 </details>
-<details class="announcement-item" style="margin-bottom: 15px; border: 1px solid #cce0f5; border-radius: 4px; background: #fff; transition: border-color 0.2s;" onmouseover="this.style.borderColor='#4a86af'" onmouseout="this.style.borderColor='#cce0f5'">
-<summary tabindex="0" style="padding: 12px 15px; cursor: pointer; background: #f4f8fc; border-radius: 3px 3px 0 0; line-height: 1.6; list-style-position: inside; outline-offset: 2px;" aria-label="按下 Enter 鍵展開讀取公告內容：QNAP作業系統存在高風險安全漏洞(CVE-2025-66277)，請儘速確認並進行修補" title="展開公告：QNAP作業系統存在高風險安全漏洞(CVE-2025-66277)，請儘速確認並進行修補"><span style="display: inline-block; background-color: #8c2828; color: #fff; padding: 3px 10px; font-size: 0.9em; margin-right: 12px; vertical-align: middle; box-shadow: 1px 1px 3px rgba(0,0,0,0.2); border-radius: 2px;">115-03-27</span><strong style="color: #111; vertical-align: middle; font-size: 1.05em;">QNAP作業系統存在高風險安全漏洞(CVE-2025-66277)，請儘速確認並進行修補</strong></summary>
-<div class="announcement-content" style="padding: 15px 20px; border-top: 1px solid #cce0f5; background: #fff;">
-<div style="margin-top: 0; line-height: 1.6; color: #333; white-space: pre-wrap; word-break: break-word; font-size: 1.0em;">[內容說明:]
-研究人員發現QNAP作業系統存在連結追蹤(Link Following)漏洞(CVE-2025-66277)，未經身分鑑別之遠端攻擊者可利用此漏洞存取未授權之檔案系統路徑，請儘速確認並進行修補。
-
-[影響平台:]
-QTS 5.2.x至5.2.8.3350 build 20251216(不含)版本
-QuTS hero h5.2.x至h5.2.8.3350 build 20251216(不含)版本
-
-[建議措施:]
-官方已針對漏洞釋出修復更新，請參考官方說明進行更新，網址如下： <a href="https://www.qnap.com/en/security-advisory/qsa-26-05" target="_blank" rel="noopener noreferrer" title="QNAP官方修復更新說明(另開啟新視窗)">QNAP 官方修復更新說明</a>
-
-[參考資料:]
-1. <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-66277" target="_blank" rel="noopener noreferrer" title="NVD CVE-2025-66277 漏洞詳細資訊(另開啟新視窗)">NVD：CVE-2025-66277 漏洞詳細資訊</a></div>
-</div>
-</details>
 </div>
 </div>
+<script>
+(function(){
+    var today = new Date();
+    today.setHours(0,0,0,0);
+    document.querySelectorAll('.announcement-item[data-expire]').forEach(function(el){
+        var parts = el.getAttribute('data-expire').split('-');
+        if(parts.length === 3){
+            var exp = new Date(parseInt(parts[0]), parseInt(parts[1])-1, parseInt(parts[2]));
+            if(today > exp){ el.style.display = 'none'; }
+        }
+    });
+})();
+</script>
 <div class="block-card carousel-container soft-border-card" id="blk-center-1" style="border: 1px solid #dde3ec; border-radius: 10px; background: #f9fafc; overflow: hidden;">
 <h2 class="block-title" style="color: #FFFFFF; background-color: #2B358C; padding: 10px 15px; border-radius: 5px; text-align: center;" tabindex="-1">資通安全</h2>
 
