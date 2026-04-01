@@ -5,7 +5,7 @@
 <link href="https://fonts.googleapis.com" rel="preconnect" /><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" /><link href="https://fonts.googleapis.com/css2?family=Iansui&display=swap" rel="stylesheet" />
 
 <style>
-    body { font-family: 'Iansui', 'Microsoft JhengHei', sans-serif; font-size: 100%; margin: 0; padding: 0; display: flex; flex-direction: column; min-height: 100vh; background-color: #f9f9f9; scroll-behavior: smooth; }
+    body { font-family: 'Iansui', 'Microsoft JhengHei', sans-serif; font-size: 100%; line-height: 1.6; margin: 0; padding: 0; display: flex; flex-direction: column; min-height: 100vh; background-color: #f9f9f9; scroll-behavior: smooth; }
     button, input, select, textarea { font-family: inherit; }
     
     /* 跳到主要內容區塊 (Accesskey/Skip Link) */
@@ -100,6 +100,8 @@
     .container-top > .block-full-width, .container-bottom > .block-full-width { width: 100%; flex: 0 0 100%; }
     .col-left, .col-right { width: 20%; flex: 0 1 20%; } 
     .col-center { width: 60%; flex: 0 1 60%; }
+    /* DOM 順序：center 優先（利於螢幕閱讀器），CSS order 控制視覺位置 */
+    .col-left { order: 1; } .col-center { order: 2; } .col-right { order: 3; }
     .center-content-wrapper { display: flex; flex-wrap: wrap; column-gap: 1.5em; row-gap: 10px; align-content: flex-start; width: 100%; }
     .block-card { margin-bottom: 10px; background: #fff; padding: 10px 10px 5px 10px; border-radius: 5px; width: 100%; box-sizing: border-box; }
     .center-content-wrapper .block-card { margin-bottom: 0 !important; }
@@ -165,11 +167,20 @@
         .dropdown-content { position: relative; display: block; width: 100%; box-shadow: none; background-color: #2B358C; top: 0; }
         .dropdown-content a { color: #fff; padding-left: 30px; } .nav-item:hover .dropdown-content { display: block; }
         .container { flex-direction: column; }
+        /* 手機版：重設 order，依 DOM 順序顯示（center 在 DOM 第一，正確） */
         .col-left, .col-center, .col-right { width: 100%; order: 0; flex: 1 1 100%; }
-        .col-center { order: 1; } .col-left { order: 2; } .col-right { order: 3; }
         .container-top > .block-card, .container-bottom > .block-card { width: 100%; }
         .sitemap-list { flex-direction: column; }
         .top-nav { display: none; } 
+    }
+    /* 減少動態：尊重使用者「減少動態」系統設定 (CS3230300E AAA) */
+    @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+        }
     }
     
     @media (min-width: 901px) {
@@ -276,6 +287,14 @@
     var content = document.getElementById("mq-content-top-0");
     var btn = document.getElementById("mq-btn-top-0");
     
+    // 尊重「減少動態」系統設定 (CS3230300E AAA)
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        content.classList.add("paused");
+        btn.textContent = "播放";
+        btn.setAttribute("aria-label", "播放跑马燈");
+        content.setAttribute("aria-live", "polite");
+    }
+    
     btn.addEventListener("click", function() {
         if(content.classList.contains("paused")) {
             content.classList.remove("paused");
@@ -305,6 +324,48 @@
 
 </div>
 <div class="container">
+<!-- 主要內容區放 DOM 第一，利於螢幕閱讀器；視覺位置由 CSS order 控制 -->
+<main class="col-center" id="main_content" tabindex="-1" style="outline: none;"><a href="#ac" id="ac" accesskey="C" title="主要內容區" class="access-key">:::</a>
+<div class="center-content-wrapper">
+<nav aria-label="Breadcrumb" style="width:100%; margin-bottom: 20px; font-size: 0.95em;"><a href="./" style="color:#2B358C; text-decoration:none;">首頁</a> &gt; <span aria-current="page">校務行政系統4大安全措施</span></nav>
+<div class="block-card" tabindex="0" style="border: 1px solid #dde3ec; border-radius: 10px; background: #f9fafc; overflow: hidden;"><h1 class="block-title" style="color: #FFFFFF; background-color: #2B358C; padding: 10px 15px; border-radius: 5px; text-align: center;" tabindex="-1">校務行政系統4大安全措施</h1>
+
+<div class="html-content"><div class="instruction-block">
+    <h2>校務行政系統4大安全措施啟用說明</h2>
+    <p>校務行政系統將啟用4大安全措施，說明如下：</p>
+
+    <h3>一、強化密碼安全原則</h3>
+    <ul>
+        <li><strong>適用對象：</strong>本系統所有使用者。</li>
+        <li><strong>辦法說明：</strong>弱密碼自設定起 7 日以上未符合密碼安全原則者，將予以<strong>停用帳號</strong>之處置，須由校端管理人員執行密碼還原後重新啟用。弱密碼型態由局端認定，至少包含系統預設之 3 種密碼還原選項，未來視情況調整期限將不另行通知。</li>
+        <li><strong>啟用時間：</strong>即日起。</li>
+    </ul>
+
+    <h3>二、遵循最低權限原則</h3>
+    <ul>
+        <li><strong>適用對象：</strong>科任教師。</li>
+        <li><strong>辦法說明：</strong>移除「學生帳號管理」模組權限並停用相關設定功能。</li>
+        <li><strong>啟用時間：</strong>即日起。</li>
+    </ul>
+
+    <h3>三、強制多重因子驗證</h3>
+    <ul>
+        <li><strong>適用對象：</strong>本局人員暨所屬教職員工、家長及志工等非學生者。</li>
+        <li><strong>辦法說明：</strong>登入本系統、校園通 APP、單一簽入時除帳密驗證外，<strong>強制</strong>選擇電子郵件信箱、手機簡訊或行動應用程式一次性密碼進行<strong>第二階段驗證</strong>。</li>
+        <li><strong>啟用時間：</strong>本年度 4 月起陸續執行。</li>
+    </ul>
+
+    <h3>四、限制網路位址存取</h3>
+    <ul>
+        <li><strong>適用對象：</strong>校端最高管理帳號（ROOT）及具有特權模組存取權者。</li>
+        <li><strong>特權模組：</strong>人事資料管理、新/舊學籍管理、學生帳號設定、校園志工管理、家長人事管理、教師帳號管理、學生帳號管理、志工帳號管理、家長帳號管理、處室權限控管、異動管理等（視需求動態調整清單）。</li>
+        <li><strong>辦法說明：</strong>特權模組之操作將<strong>限制網路來源位置</strong>，僅各校內部私有行政人員專用網段可使用，並請各校管理者審慎評估特權模組之權限開放人員。</li>
+        <li><strong>啟用時間：</strong>本年度 4 月起開始陸續執行。</li>
+    </ul>
+</div></div>
+</div>
+</div>
+</main>
 <aside class="col-left"><a href="#al" id="al" accesskey="L" title="左側區塊" class="access-key">:::</a>
 <div class="block-card soft-border-card" id="blk-left-0" style="border: 1px solid #dde3ec; border-radius: 10px; background: #f9fafc; overflow: hidden;">
 <h2 class="block-title" style="color: #FFFFFF; background-color: #2B358C; padding: 10px 15px; border-radius: 5px; text-align: center;" tabindex="-1">數位學習相關網站</h2>
@@ -371,47 +432,6 @@
 </div>
 
 </aside>
-<main class="col-center" id="main_content" tabindex="-1" style="outline: none;"><a href="#ac" id="ac" accesskey="C" title="主要內容區" class="access-key">:::</a>
-<div class="center-content-wrapper">
-<nav aria-label="Breadcrumb" style="width:100%; margin-bottom: 20px; font-size: 0.95em;"><a href="./" style="color:#2B358C; text-decoration:none;">首頁</a> &gt; <span aria-current="page">校務行政系統4大安全措施</span></nav>
-<div class="block-card" tabindex="0" style="border: 1px solid #dde3ec; border-radius: 10px; background: #f9fafc; overflow: hidden;"><h1 class="block-title" style="color: #FFFFFF; background-color: #2B358C; padding: 10px 15px; border-radius: 5px; text-align: center;" tabindex="-1">校務行政系統4大安全措施</h1>
-
-<div class="html-content"><div class="instruction-block">
-    <h2>校務行政系統4大安全措施啟用說明</h2>
-    <p>校務行政系統將啟用4大安全措施，說明如下：</p>
-
-    <h3>一、強化密碼安全原則</h3>
-    <ul>
-        <li><strong>適用對象：</strong>本系統所有使用者。</li>
-        <li><strong>辦法說明：</strong>弱密碼自設定起 7 日以上未符合密碼安全原則者，將予以<strong>停用帳號</strong>之處置，須由校端管理人員執行密碼還原後重新啟用。弱密碼型態由局端認定，至少包含系統預設之 3 種密碼還原選項，未來視情況調整期限將不另行通知。</li>
-        <li><strong>啟用時間：</strong>即日起。</li>
-    </ul>
-
-    <h3>二、遵循最低權限原則</h3>
-    <ul>
-        <li><strong>適用對象：</strong>科任教師。</li>
-        <li><strong>辦法說明：</strong>移除「學生帳號管理」模組權限並停用相關設定功能。</li>
-        <li><strong>啟用時間：</strong>即日起。</li>
-    </ul>
-
-    <h3>三、強制多重因子驗證</h3>
-    <ul>
-        <li><strong>適用對象：</strong>本局人員暨所屬教職員工、家長及志工等非學生者。</li>
-        <li><strong>辦法說明：</strong>登入本系統、校園通 APP、單一簽入時除帳密驗證外，<strong>強制</strong>選擇電子郵件信箱、手機簡訊或行動應用程式一次性密碼進行<strong>第二階段驗證</strong>。</li>
-        <li><strong>啟用時間：</strong>本年度 4 月起陸續執行。</li>
-    </ul>
-
-    <h3>四、限制網路位址存取</h3>
-    <ul>
-        <li><strong>適用對象：</strong>校端最高管理帳號（ROOT）及具有特權模組存取權者。</li>
-        <li><strong>特權模組：</strong>人事資料管理、新/舊學籍管理、學生帳號設定、校園志工管理、家長人事管理、教師帳號管理、學生帳號管理、志工帳號管理、家長帳號管理、處室權限控管、異動管理等（視需求動態調整清單）。</li>
-        <li><strong>辦法說明：</strong>特權模組之操作將<strong>限制網路來源位置</strong>，僅各校內部私有行政人員專用網段可使用，並請各校管理者審慎評估特權模組之權限開放人員。</li>
-        <li><strong>啟用時間：</strong>本年度 4 月起開始陸續執行。</li>
-    </ul>
-</div></div>
-</div>
-</div>
-</main>
 <aside class="col-right"><a href="#ar" id="ar" accesskey="R" title="右側區塊" class="access-key">:::</a>
 
 </aside>
