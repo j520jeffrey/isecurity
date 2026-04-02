@@ -279,7 +279,7 @@
 }
 </style>
 <div style="display: flex; align-items: center; background: #fff; padding: 8px 10px; border: 1px solid #eee; border-radius: 5px; gap: 10px;">
-    <button id="mq-btn-top-0" aria-label="暫停跑馬燈" style="white-space: nowrap; background: #333; color: #fff; border: none; padding: 4px 10px; border-radius: 4px; cursor: pointer; font-size: 0.85em; font-weight: bold; letter-spacing: 1px;">|| 暫停</button>
+    <button id="mq-btn-top-0" aria-label="暫停播放跑馬燈" title="暫停播放跑馬燈" style="white-space: nowrap; background: #333; color: #fff; border: none; padding: 4px 10px; border-radius: 4px; cursor: pointer; font-size: 0.85em; font-weight: bold; letter-spacing: 1px;">|| 暫停</button>
     <div id="mq-wrapper-top-0" tabindex="0" style="flex: 1; overflow: hidden;" role="region" aria-roledescription="marquee" aria-live="off" onfocus="this.style.outline='2px solid #ffcc00'; this.style.outlineOffset='2px';" onblur="this.style.outline='none';">
         <div id="mq-content-top-0" class="mq-anim-top-0">
 <span style="margin-right: 40px; color: #333;">新北市樹林區三多國民小學-數位資安資訊網</span>
@@ -296,7 +296,8 @@
     if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         content.classList.add("paused");
         btn.innerHTML = "&#9654; 播放";
-        btn.setAttribute("aria-label", "播放跑马燈");
+        btn.setAttribute("aria-label", "自動播放跑馬燈");
+        btn.setAttribute("title", "自動播放跑馬燈");
         wrapper.setAttribute("aria-live", "polite");
     }
     
@@ -304,12 +305,14 @@
         if(content.classList.contains("paused")) {
             content.classList.remove("paused");
             btn.innerHTML = "|| 暫停";
-            btn.setAttribute("aria-label", "暫停跑馬燈");
+            btn.setAttribute("aria-label", "暫停播放跑馬燈");
+            btn.setAttribute("title", "暫停播放跑馬燈");
             wrapper.setAttribute("aria-live", "off");
         } else {
             content.classList.add("paused");
             btn.innerHTML = "&#9654; 播放";
-            btn.setAttribute("aria-label", "播放跑馬燈");
+            btn.setAttribute("aria-label", "自動播放跑馬燈");
+            btn.setAttribute("title", "自動播放跑馬燈");
             wrapper.setAttribute("aria-live", "polite");
         }
     });
