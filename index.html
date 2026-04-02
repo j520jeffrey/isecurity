@@ -313,11 +313,6 @@
     content.addEventListener("focusout", function() { 
         if(btn.textContent === "暫停") content.classList.remove("paused"); 
     });
-    
-    content.addEventListener("mouseover", function() { content.classList.add("paused"); });
-    content.addEventListener("mouseout", function() { 
-        if(btn.textContent === "暫停") content.classList.remove("paused"); 
-    });
 })();
 </script>
 </div>
@@ -543,8 +538,6 @@
     
     var userPaused = false;
     var inner = document.getElementById("cr-inner-center-1");
-    wrapper.addEventListener('mouseenter', function() { if(isPlaying) { stopPlay(false); } });
-    wrapper.addEventListener('mouseleave', function() { if(!userPaused && !isPlaying) { startPlay(); } });
     wrapper.addEventListener('focusin', function() { if(isPlaying) { stopPlay(false); } });
     wrapper.addEventListener('focusout', function() { if(!userPaused && !isPlaying) { startPlay(); } });
     

@@ -313,11 +313,6 @@
     content.addEventListener("focusout", function() { 
         if(btn.textContent === "暫停") content.classList.remove("paused"); 
     });
-    
-    content.addEventListener("mouseover", function() { content.classList.add("paused"); });
-    content.addEventListener("mouseout", function() { 
-        if(btn.textContent === "暫停") content.classList.remove("paused"); 
-    });
 })();
 </script>
 </div>
