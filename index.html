@@ -538,8 +538,8 @@
     
     var userPaused = false;
     var inner = document.getElementById("cr-inner-center-1");
-    wrapper.addEventListener('focusin', function() { if(isPlaying) { stopPlay(false); } });
-    wrapper.addEventListener('focusout', function() { if(!userPaused && !isPlaying) { startPlay(); } });
+    inner.addEventListener('focusin', function() { if(isPlaying) { stopPlay(false); } });
+    inner.addEventListener('focusout', function() { if(!userPaused && !isPlaying) { startPlay(); } });
     
     // 尊重「減少動態」系統設定：強制暂停輪播 (CS3230300E AAA)
     if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
