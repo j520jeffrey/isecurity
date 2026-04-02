@@ -9,22 +9,26 @@
     button, input, select, textarea { font-family: inherit; }
     
     /* 跳到主要內容區塊 (Accesskey/Skip Link) */
-    .skip-link { position: absolute; top: -9999px; left: 0; background: #000; color: #fff; padding: 10px; z-index: 99999; text-decoration: none; font-weight: bold; border-radius: 0 0 5px 0; }
-    .skip-link:focus { top: 0; }
-    .access-key { color: #fff; text-decoration: none; font-size: 0.9em; padding: 0 5px; cursor: help; }
-    .access-key:focus { outline: 2px solid yellow; color: #fff; }
+    .skip-link { position: absolute; top: -9999px; left: 0; background: #000; color: #fff; padding: 10px; z-index: 99999; text-decoration: none; font-weight: bold; border-radius: 0 0 5px 0; transition: background-color 0.2s; }
+    .skip-link:hover, .skip-link:focus { background-color: #ff9900 !important; color: #000 !important; }
+    .skip-link:focus { top: 0; outline: 2px solid #fff !important; box-shadow: 0 0 0 4px #000 !important; }
+    .access-key { color: #fff; text-decoration: none; font-size: 0.9em; padding: 0 5px; cursor: help; transition: background-color 0.2s; }
+    a.access-key:hover, a.access-key:focus { background-color: #ff9900 !important; color: #000 !important; }
+    a.access-key:focus { outline: 2px solid #fff !important; box-shadow: 0 0 0 4px #000 !important; z-index: 10; position: relative; }
     
     /* 上方功能列 (Accesskey U) */
     .top-nav { background-color: #2B358C; color: #fff; padding: 5px 20px; display: flex; justify-content: flex-end; align-items: center; font-size: 0.95em; }
-    .top-nav-items { display: flex; gap: 15px; align-items: center; }
-    .top-nav a { color: #fff; text-decoration: none; transition: opacity 0.2s; }
-    .top-nav a:hover { text-decoration: underline; opacity: 0.9; }
+    .top-nav-items { display: flex; gap: 10px; align-items: center; }
+    .top-nav a { color: #fff; text-decoration: none; transition: all 0.2s; padding: 4px 8px; border-radius: 4px; }
+    .top-nav a:hover, .top-nav a:focus { background-color: #fff; color: #111; text-decoration: none; outline: 2px solid #ffcc00; }
     
     /* 標頭 Header */
     .header { background: #fff; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; position: relative; border-bottom: 1px solid #eee; }
     .header-left { display: flex; align-items: center; flex-wrap: wrap; }
-    .logo-link { display: flex; align-items: center; text-decoration: none; color: inherit; flex-wrap: wrap; position: relative; }
-    .logo-link:hover { opacity: 0.8; }
+    .logo-link { display: flex; align-items: center; text-decoration: none; color: inherit; flex-wrap: wrap; position: relative; padding: 5px; border-radius: 5px; transition: background-color 0.2s; }
+    .logo-link:hover, .logo-link:focus { background-color: #ff9900 !important; background: #ff9900 !important; color: #000 !important; }
+    .logo-link:hover *, .logo-link:focus * { color: #000 !important; }
+    .logo-link:focus { outline: 2px solid #fff !important; box-shadow: 0 0 0 4px #000 !important; z-index: 10; }
     .school-logo { height: 80px; width: auto; margin-right: 15px; }
     .school-text { display: inline-block; vertical-align: middle; }
     .school-title-cn { font-size: 2.25em; font-weight: normal; color: #333; margin: 0; line-height: 1.2; }
@@ -50,13 +54,15 @@
     }
 
     .nav-item { position: relative; }
-    .nav-link { display: block; color: white; text-align: center; padding: 14px 20px; text-decoration: none; font-size: 1.1em; position: relative; }
-    .nav-link:hover, .nav-link:focus { background-color: rgba(0,0,0,0.2); }
+    .nav-link { display: block; color: white; text-align: center; padding: 14px 20px; text-decoration: none; font-size: 1.1em; position: relative; transition: all 0.2s; }
+    .nav-link:hover, .nav-link:focus { background-color: #ff9900 !important; color: #000 !important; }
+    .nav-link:focus { outline: 2px solid #fff !important; box-shadow: 0 0 0 4px #000 !important; z-index: 10; }
     
     /* 下拉選單 */
     .dropdown-content { display: none; position: absolute; background-color: #f9f9f9; min-width: 200px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); z-index: 1000; top: 100%; left: 0; }
-    .dropdown-content a { color: black; padding: 12px 16px; text-decoration: none; display: block; text-align: left; position: relative; }
-    .dropdown-content a:hover { background-color: #ddd; }
+    .dropdown-content a { color: black; padding: 12px 16px; text-decoration: none; display: block; text-align: left; position: relative; transition: all 0.2s; }
+    .dropdown-content a:hover, .dropdown-content a:focus { background-color: #ff9900 !important; color: #000 !important; }
+    .dropdown-content a:focus { outline: 2px solid #fff !important; box-shadow: inset 0 0 0 2px #000 !important; z-index: 10; }
     .nav-item:hover .dropdown-content { display: block; }
     .nav-item:focus-within .dropdown-content { display: block; }
     .hamburger { display: none; background: none; border: none; color: #2B358C; font-size: 2.5em; cursor: pointer; position: absolute; top: 15px; right: 20px; }
@@ -65,7 +71,7 @@
     /* 橫幅 Banner */
     .banner-container { width: 100%; max-width: 100%; margin: 0 auto; padding-top: 0; }
     .banner-img { width: 100%; height: auto; display: block; object-fit: cover; max-height: 400px; }
-    .banner-img:focus { outline: 4px dashed #2B358C; outline-offset: -4px; filter: brightness(0.85); background-color: rgba(0,0,0,0.1); }
+    .banner-img:focus { outline: 4px dashed #ff9900 !important; outline-offset: -4px; filter: brightness(0.85); background-color: rgba(0,0,0,0.1); }
     
     /* 頁尾 Footer */
     .footer { background: #333; color: #fff; margin-top: auto; width: 100%; }
@@ -120,7 +126,7 @@
     .link-list-entry { list-style: none; margin-bottom: 5px; }
     .link-list-horizontal .link-list-entry { margin-bottom: 0; }
     .single-link { display: block; text-decoration: none; color: #333; background-color: #fff; border: 1px solid #ddd; padding: 12px 15px; border-radius: 5px; transition: all 0.2s; }
-    .single-link:hover { background-color: #f9f9f9; color: #2B358C; border-color: #2B358C; }
+    .single-link:hover, .single-link:focus { background-color: #e8f4fd !important; color: #000 !important; border: 2px solid #1a73e8 !important; padding: 11px 14px !important; outline: none; }
     
     a.img-link { display: block; text-align: center; margin-bottom: 5px; text-decoration: none; border: 1px solid #eee; padding: 5px; border-radius: 5px; transition: transform 0.2s; position: relative; overflow: visible; }
     a.img-link:hover { transform: scale(1.02); box-shadow: 0 2px 5px rgba(0,0,0,0.1); z-index: 1000; }
@@ -131,6 +137,8 @@
     .html-content { font-size: 1.1em; line-height: 1.5; color: #333; }
     .html-content p { margin: 0 0 0.5em 0; }
     .html-content img { max-width: 100%; height: auto; }
+    .html-content a { color: #2B358C; text-decoration: underline; padding: 0 2px; border-radius: 3px; transition: background-color 0.2s; }
+    .html-content a:hover, .html-content a:focus { background-color: #e8f4fd !important; color: #000 !important; outline: 2px solid #1a73e8 !important; text-decoration: none; }
 
     .back-to-top {
         display: none; 
@@ -204,9 +212,16 @@
 </head><body>
 <a href="#main_content" class="skip-link">跳到主要內容區塊</a>
 <nav class="top-nav" aria-label="上方功能列">
-<div class="top-nav-items">
+<div class="top-nav-items" style="display: flex; align-items: center;">
 <a href="#au" id="au" accesskey="U" title="上方功能區" class="access-key">:::</a>
-<a href="sitemap.html#ac" title="移至網站導覽" aria-label="移至網站導覽">網站導覽</a>
+<a href="sitemap.html#ac" title="移至網站導覽" aria-label="移至網站導覽" style="display: inline-flex; align-items: center; justify-content: center; padding: 2px;">
+    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" style="fill: currentColor;">
+        <rect x="6" y="3" width="12" height="6" rx="1.5" />
+        <rect x="3" y="15" width="7" height="6" rx="1.5" />
+        <rect x="14" y="15" width="7" height="6" rx="1.5" />
+        <path d="M12 9v3M6.5 12v3M17.5 12v3M6.5 12h11" fill="none" stroke="currentColor" stroke-width="2" />
+    </svg>
+</a>
 </div>
 </nav>
 <header class="header">
@@ -224,7 +239,7 @@
 <li class="nav-item mobile-only"><a href="./" class="nav-link">首頁</a></li>
 <li class="nav-item mobile-only"><a href="sitemap.html#ac" aria-label="網站導覽 (移至網站導覽)" title="網站導覽 (移至網站導覽)" class="nav-link">網站導覽</a></li>
 <li class="nav-item">
-<a href="javascript:void(0);" role="button" class="nav-link" aria-haspopup="true" aria-expanded="false" style="border:none;background:none;font:inherit;cursor:pointer;color:white;">校園各項服務系統 ▼</a>
+<a href="javascript:void(0);" role="button" class="nav-link" aria-haspopup="true" aria-expanded="false" style="border:none;background-color:transparent;font:inherit;cursor:pointer;">校園各項服務系統 ▼</a>
 <div class="dropdown-content">
 <a href="https://esa.ntpc.edu.tw" target="_blank" aria-label="校務行政系統 (另開新視窗)" title="校務行政系統 (另開新視窗)" class="nav-link" style="text-align:left;">校務行政系統</a>
 <a href="https://pts.ntpc.edu.tw/" target="_blank" aria-label="新北市親師生平台 (另開新視窗)" title="新北市親師生平台 (另開新視窗)" class="nav-link" style="text-align:left;">新北市親師生平台</a>
@@ -233,7 +248,7 @@
 </div>
 </li>
 <li class="nav-item">
-<a href="javascript:void(0);" role="button" class="nav-link" aria-haspopup="true" aria-expanded="false" style="border:none;background:none;font:inherit;cursor:pointer;color:white;">資訊設備使用說明 ▼</a>
+<a href="javascript:void(0);" role="button" class="nav-link" aria-haspopup="true" aria-expanded="false" style="border:none;background-color:transparent;font:inherit;cursor:pointer;">資訊設備使用說明 ▼</a>
 <div class="dropdown-content">
 <a href="01.html#ac" target="_self" aria-label="移至 86吋觸控電視" title="移至 86吋觸控電視" class="nav-link" style="text-align:left;">86吋觸控電視</a>
 <a href="02.html#ac" target="_self" aria-label="移至 教學電腦" title="移至 教學電腦" class="nav-link" style="text-align:left;">教學電腦</a>
@@ -241,13 +256,13 @@
 </div>
 </li>
 <li class="nav-item">
-<a href="javascript:void(0);" role="button" class="nav-link" aria-haspopup="true" aria-expanded="false" style="border:none;background:none;font:inherit;cursor:pointer;color:white;">生生用平板 ▼</a>
+<a href="javascript:void(0);" role="button" class="nav-link" aria-haspopup="true" aria-expanded="false" style="border:none;background-color:transparent;font:inherit;cursor:pointer;">生生用平板 ▼</a>
 <div class="dropdown-content">
 <a href="03.html#ac" target="_self" aria-label="移至 iPad進行教學注意事項" title="移至 iPad進行教學注意事項" class="nav-link" style="text-align:left;">iPad進行教學注意事項</a>
 </div>
 </li>
 <li class="nav-item">
-<a href="javascript:void(0);" role="button" class="nav-link" aria-haspopup="true" aria-expanded="false" style="border:none;background:none;font:inherit;cursor:pointer;color:white;">資訊安全 ▼</a>
+<a href="javascript:void(0);" role="button" class="nav-link" aria-haspopup="true" aria-expanded="false" style="border:none;background-color:transparent;font:inherit;cursor:pointer;">資訊安全 ▼</a>
 <div class="dropdown-content">
 <a href="04.html#ac" target="_self" aria-label="移至 資安法規" title="移至 資安法規" class="nav-link" style="text-align:left;">資安法規</a>
 </div>
@@ -338,7 +353,9 @@
 <div class="block-card soft-border-card" id="blk-center-0" style="border: 1px solid #dde3ec; border-radius: 10px; background: #f9fafc; overflow: hidden;">
 <h2 class="block-title" style="color: #FFFFFF; background-color: #2B358C; padding: 10px 15px; border-radius: 5px; text-align: center;" tabindex="-1">公告訊息</h2>
 <style>
-.announcement-item summary:focus, .announcement-item summary:focus-visible { outline: 3px solid #ffcc00 !important; outline-offset: -3px !important; }
+.announcement-item summary { transition: all 0.2s; }
+.announcement-item summary:hover, .announcement-item summary:focus, .announcement-item summary:focus-visible { background-color: #e8f4fd !important; outline: 2px solid #1a73e8 !important; outline-offset: -2px !important; }
+.announcement-item summary:hover strong, .announcement-item summary:focus strong, .announcement-item summary:focus-visible strong { color: #000 !important; }
 </style>
 <div class="announcement-list" style="margin-top: 15px;">
 <details class="announcement-item" style="margin-bottom: 15px; border: 1px solid #cce0f5; border-radius: 4px; background: #fff; transition: border-color 0.2s;" onmouseover="this.style.borderColor='#4a86af'" onmouseout="this.style.borderColor='#cce0f5'">
