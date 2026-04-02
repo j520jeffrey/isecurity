@@ -276,7 +276,7 @@
 </style>
 <div style="display: flex; align-items: center; background: #fff; padding: 8px 10px; border: 1px solid #eee; border-radius: 5px; gap: 10px;">
     <button id="mq-btn-top-0" aria-label="暫停跑馬燈" style="white-space: nowrap; background: #2B358C; color: #fff; border: none; padding: 5px 12px; border-radius: 4px; cursor: pointer; font-size: 0.95em;">暫停</button>
-    <div style="flex: 1; overflow: hidden;" role="marquee" aria-live="off">
+    <div id="mq-wrapper-top-0" tabindex="0" style="flex: 1; overflow: hidden;" role="region" aria-roledescription="marquee" aria-live="off" onfocus="this.style.outline='2px solid #ffcc00'; this.style.outlineOffset='2px';" onblur="this.style.outline='none';">
         <div id="mq-content-top-0" class="mq-anim-top-0">
 <span style="margin-right: 40px; color: #333;">新北市樹林區三多國民小學-數位資安資訊網</span>
         </div>
@@ -284,6 +284,7 @@
 </div>
 <script>
 (function(){
+    var wrapper = document.getElementById("mq-wrapper-top-0");
     var content = document.getElementById("mq-content-top-0");
     var btn = document.getElementById("mq-btn-top-0");
     
@@ -292,7 +293,7 @@
         content.classList.add("paused");
         btn.textContent = "播放";
         btn.setAttribute("aria-label", "播放跑马燈");
-        content.setAttribute("aria-live", "polite");
+        wrapper.setAttribute("aria-live", "polite");
     }
     
     btn.addEventListener("click", function() {
@@ -300,17 +301,22 @@
             content.classList.remove("paused");
             btn.textContent = "暫停";
             btn.setAttribute("aria-label", "暫停跑馬燈");
-            content.setAttribute("aria-live", "off");
+            wrapper.setAttribute("aria-live", "off");
         } else {
             content.classList.add("paused");
             btn.textContent = "播放";
             btn.setAttribute("aria-label", "播放跑馬燈");
-            content.setAttribute("aria-live", "polite");
+            wrapper.setAttribute("aria-live", "polite");
         }
     });
     
-    content.addEventListener("focusin", function() { content.classList.add("paused"); });
-    content.addEventListener("focusout", function() { 
+    wrapper.addEventListener("focusin", function() { content.classList.add("paused"); });
+    wrapper.addEventListener("focusout", function() { 
+        if(btn.textContent === "暫停") content.classList.remove("paused"); 
+    });
+    
+    wrapper.addEventListener("mouseover", function() { content.classList.add("paused"); });
+    wrapper.addEventListener("mouseout", function() { 
         if(btn.textContent === "暫停") content.classList.remove("paused"); 
     });
 })();
