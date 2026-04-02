@@ -524,7 +524,7 @@
     
     function startPlay() {
         if(timer) clearInterval(timer);
-        timer = setInterval(nextSlide, 4000);
+        timer = setInterval(nextSlide, 5000);
         isPlaying = true;
         btnPlay.innerHTML = "|| 暫停";
         btnPlay.setAttribute("aria-label", "暫停輪播主圖");
