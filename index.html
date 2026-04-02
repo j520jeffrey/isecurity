@@ -144,7 +144,7 @@
         background-color: #000; 
         color: #fff;            
         cursor: pointer;
-        padding: 10px 15px;
+        padding: 12px;
         border-radius: 50%;     
         text-decoration: none;
         box-shadow: 0 2px 5px rgba(0,0,0,0.3);
@@ -643,7 +643,7 @@
 </div>
 
 </aside>
-<aside class="col-right"><a href="#ar" id="ar" accesskey="R" title="右側區塊" class="access-key">:::</a>
+<aside class="col-right">
 
 </aside>
 </div>
@@ -676,14 +676,39 @@
     </div>
 </footer>
 <a href="#" id="backToTop" class="back-to-top" title="回到頁首" aria-label="回到頁首">
-    <span aria-hidden="true">▲</span>
+    <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" style="display: block;">
+        <path d="M6 16L12 10L18 16M7 7h10" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
 </a>
 <script>
     document.getElementById('hamburger').addEventListener('click', function() { var menu = document.getElementById('nav-menu'); menu.classList.toggle('active'); });
     var mybutton = document.getElementById("backToTop");
-    window.onscroll = function() { if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) mybutton.style.display = "block"; else mybutton.style.display = "none"; };
+    window.onscroll = function() { if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) mybutton.style.display = "flex"; else mybutton.style.display = "none"; };
     mybutton.addEventListener('click', function(e) { e.preventDefault(); window.scrollTo({top: 0, behavior: 'smooth'}); var skipLink = document.querySelector('.skip-link'); if (skipLink) skipLink.focus(); else { document.body.tabIndex = -1; document.body.focus(); } });
     window.addEventListener('load', function() { if(window.location.hash) { var t = document.querySelector(window.location.hash); if(t) { t.focus(); } } });
+    
+    document.addEventListener("DOMContentLoaded", function() {
+        var d = new Date();
+        var yyyy = d.getFullYear();
+        var mm = ("0" + (d.getMonth() + 1)).slice(-2);
+        var dd = ("0" + d.getDate()).slice(-2);
+        var today = yyyy + "-" + mm + "-" + dd;
+        
+        var scheds = document.querySelectorAll(".schedulable-block, .schedulable-sitemap-link");
+        scheds.forEach(function(el) {
+            var p_str = el.getAttribute("data-publish");
+            var e_str = el.getAttribute("data-expire");
+            var hidden = false;
+            
+            if (p_str && today < p_str) hidden = true;
+            if (e_str && today > e_str) hidden = true;
+            
+            if (hidden) {
+                el.style.display = "none";
+                el.setAttribute("aria-hidden", "true");
+            }
+        });
+    });
 </script>
 <script>
 (function(){
