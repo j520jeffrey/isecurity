@@ -1,37 +1,34 @@
-<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>新北市樹林區三多國民小學-數位資安資訊網</title>
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>新北市樹林區三多國民小學</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 <link rel="icon" href="favicon.ico" />
 <link href="https://fonts.googleapis.com" rel="preconnect" /><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" /><link href="https://fonts.googleapis.com/css2?family=Iansui&display=swap" rel="stylesheet" />
 
 <style>
-    body { font-family: 'Iansui', 'Microsoft JhengHei', sans-serif; font-size: 100%; line-height: 1.6; margin: 0; padding: 0; display: flex; flex-direction: column; min-height: 100vh; background-color: #f9f9f9; scroll-behavior: smooth; }
+    body { font-family: 'Iansui', 'Microsoft JhengHei', sans-serif; font-size: 100%; margin: 0; padding: 0; display: flex; flex-direction: column; min-height: 100vh; background-color: #f9f9f9; scroll-behavior: smooth; }
     button, input, select, textarea { font-family: inherit; }
     
     /* 跳到主要內容區塊 (Accesskey/Skip Link) */
-    .skip-link { position: absolute; top: -9999px; left: 0; background: #000; color: #fff; padding: 10px; z-index: 99999; text-decoration: none; font-weight: bold; border-radius: 0 0 5px 0; transition: background-color 0.2s; }
-    .skip-link:hover, .skip-link:focus { background-color: #ff9900 !important; color: #000 !important; }
-    .skip-link:focus { top: 0; outline: 2px solid #fff !important; box-shadow: 0 0 0 4px #000 !important; }
-    .access-key { color: #fff; text-decoration: none; font-size: 0.9em; padding: 0 5px; cursor: help; transition: background-color 0.2s; }
-    a.access-key:hover, a.access-key:focus { background-color: #ff9900 !important; color: #000 !important; }
-    a.access-key:focus { outline: 2px solid #fff !important; box-shadow: 0 0 0 4px #000 !important; z-index: 10; position: relative; }
+    .skip-link { position: absolute; top: -9999px; left: 0; background: #FFBF47; color: #000; padding: 10px 20px; z-index: 99999; text-decoration: none; font-weight: bold; border-radius: 0 0 10px 0; border: 2px solid #fff; box-shadow: 0 0 10px rgba(0,0,0,0.2); }
+    .skip-link:focus { top: 0; outline: none; }
+    .access-key { color: #2B358C; text-decoration: none; font-size: 0.9em; padding: 0 5px; cursor: help; transition: all 0.2s; border-radius: 4px; }
+    .top-nav .access-key { color: #fff; }
+    .access-key:hover, .access-key:focus-visible { outline: 3px solid #000 !important; box-shadow: inset 0 0 0 3px #fff !important; background-color: #FFBF47 !important; color: #000 !important; }
     
     /* 上方功能列 (Accesskey U) */
     .top-nav { background-color: #2B358C; color: #fff; padding: 5px 20px; display: flex; justify-content: flex-end; align-items: center; font-size: 0.95em; }
-    .top-nav-items { display: flex; gap: 10px; align-items: center; }
+    .top-nav-items { display: flex; gap: 15px; align-items: center; }
     .top-nav a { color: #fff; text-decoration: none; transition: all 0.2s; padding: 4px 8px; border-radius: 4px; }
-    .top-nav a:hover { background-color: #ff9900 !important; color: #000 !important; text-decoration: none; outline: none; }
-    .top-nav a:hover svg { fill: #fff !important; stroke: #fff !important; }
-    .top-nav a:focus-visible { background-color: #ff9900 !important; color: #000 !important; text-decoration: none; outline: 2px solid #fff !important; box-shadow: 0 0 0 4px #000 !important; }
-
+    .top-nav a:hover, .top-nav a:focus-visible { background-color: #FFBF47 !important; color: #000 !important; outline: none; }
+    .top-nav a:focus-visible { outline: 3px solid #000 !important; box-shadow: inset 0 0 0 3px #fff !important; }
+    .top-nav a.sitemap-top-link:hover, .top-nav a.sitemap-top-link:focus-visible { color: #fff !important; }
     
     /* 標頭 Header */
     .header { background: #fff; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; position: relative; border-bottom: 1px solid #eee; }
     .header-left { display: flex; align-items: center; flex-wrap: wrap; }
-    .logo-link { display: flex; align-items: center; text-decoration: none; color: inherit; flex-wrap: wrap; position: relative; padding: 5px; border-radius: 5px; transition: background-color 0.2s; }
-    .logo-link:hover, .logo-link:focus { background-color: #ff9900 !important; background: #ff9900 !important; color: #000 !important; }
-    .logo-link:hover *, .logo-link:focus * { color: #000 !important; }
-    .logo-link:focus { outline: 2px solid #fff !important; box-shadow: 0 0 0 4px #000 !important; z-index: 10; }
+    .logo-link { display: flex; align-items: center; text-decoration: none; color: inherit; flex-wrap: wrap; position: relative; padding: 5px; border-radius: 8px; transition: all 0.2s; }
+    .logo-link:hover, .logo-link:focus-visible { background-color: #FFBF47; }
+    .logo-link:focus-visible { outline: 3px solid #000 !important; box-shadow: inset 0 0 0 3px #fff !important; }
     .school-logo { height: 80px; width: auto; margin-right: 15px; }
     .school-text { display: inline-block; vertical-align: middle; }
     .school-title-cn { font-size: 2.25em; font-weight: normal; color: #333; margin: 0; line-height: 1.2; }
@@ -57,24 +54,40 @@
     }
 
     .nav-item { position: relative; }
-    .nav-link { display: block; color: white; text-align: center; padding: 14px 20px; text-decoration: none; font-size: 1.25em; position: relative; transition: all 0.2s; }
-    .nav-link:hover, .nav-link:focus { background-color: #ff9900 !important; color: #000 !important; }
-    .nav-link:focus { outline: 2px solid #fff !important; box-shadow: 0 0 0 4px #000 !important; z-index: 10; }
+    .nav-link { display: block; color: white; text-align: center; padding: 14px 20px; text-decoration: none; font-size: 1.1em; position: relative; transition: all 0.2s; }
+    .nav-link:hover, .nav-link:focus-visible { background-color: #FFBF47 !important; color: #000 !important; }
+    .nav-link:focus-visible { outline: 3px solid #000 !important; box-shadow: inset 0 0 0 3px #fff !important; z-index: 10; }
+
+    /* 公告附件樣式 */
+    .attachment-area { margin-top: 15px; padding-top: 10px; border-top: 1px dashed #ddd; }
+    .attachment-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; font-weight: bold; color: #555; font-size: 0.95em; }
+    .attachment-list { display: flex; flex-wrap: wrap; gap: 10px; }
+    .attachment-card { display: flex; align-items: center; gap: 10px; background: #f0f7ff; border: 1px solid #ccd9ff; padding: 8px 12px; border-radius: 8px; text-decoration: none; color: #333; transition: all 0.2s; min-width: 200px; }
+    .attachment-card:hover, .attachment-card:focus-visible { background: #e0eeff; border-color: #a0bcff; box-shadow: 0 2px 8px rgba(0,0,0,0.1); outline: none; }
+    .attachment-card:focus-visible { border: 2px solid #2B358C; }
+    .file-icon { color: #888; flex-shrink: 0; }
+    .file-name { flex-grow: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 0.95em; }
+    .file-badge { background: #ccd9ff; color: #4466aa; font-size: 0.75em; padding: 2px 6px; border-radius: 4px; font-weight: bold; text-transform: uppercase; flex-shrink: 0; }
+
+    /* 橫幅 Banner */
+    .banner-container { width: 100%; text-align: center; background: #eee; }
+    .banner-img { max-width: 100%; height: auto; display: block; margin: 0 auto; transition: all 0.2s; cursor: pointer; border: 4px solid transparent; }
+    .banner-img:hover, .banner-img:focus-visible { outline: none; border: 4px dotted #FFBF47; }
     
     /* 下拉選單 */
     .dropdown-content { display: none; position: absolute; background-color: #f9f9f9; min-width: 200px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); z-index: 1000; top: 100%; left: 0; }
-    .dropdown-content a { color: black; padding: 12px 16px; text-decoration: none; display: block; text-align: left; font-size: 1.125em; position: relative; transition: all 0.2s; }
-    .dropdown-content a:hover, .dropdown-content a:focus { background-color: #ff9900 !important; color: #000 !important; }
-    .dropdown-content a:focus { outline: 2px solid #fff !important; box-shadow: 0 0 0 4px #000 !important; z-index: 10; position: relative; }
+    .dropdown-content a { color: black; padding: 12px 16px; text-decoration: none; display: block; text-align: left; position: relative; transition: all 0.2s; }
+    .dropdown-content a:hover, .dropdown-content a:focus-visible { background-color: #FFBF47 !important; color: #000 !important; }
+    .dropdown-content a:focus-visible { outline: 3px solid #000 !important; box-shadow: inset 0 0 0 3px #fff !important; z-index: 10; }
     .nav-item:hover .dropdown-content { display: block; }
     .nav-item:focus-within .dropdown-content { display: block; }
     .hamburger { display: none; background: none; border: none; color: #2B358C; font-size: 2.5em; cursor: pointer; position: absolute; top: 15px; right: 20px; }
     .mobile-only { display: none; }
     
     /* 橫幅 Banner */
-    .banner-container { width: 100%; max-width: 100%; margin: 0 auto; padding-top: 0; }
-    .banner-img { width: 100%; height: auto; display: block; object-fit: cover; max-height: 400px; }
-    .banner-img:focus { outline: 4px dashed #ff9900 !important; outline-offset: -4px; filter: brightness(0.85); background-color: rgba(0,0,0,0.1); }
+    .banner-container { width: 100%; max-width: 100%; margin: 0 auto; padding-top: 0; box-sizing: border-box; overflow: hidden; }
+    .banner-img { width: 100%; height: auto; display: block; object-fit: cover; max-height: 400px; box-sizing: border-box; border: 4px solid transparent; transition: all 0.2s; cursor: pointer; }
+    .banner-img:hover, .banner-img:focus-visible { outline: none; border: 4px dotted #FFBF47; }
     
     /* 頁尾 Footer */
     .footer { background: #333; color: #fff; margin-top: auto; width: 100%; }
@@ -85,10 +98,11 @@
     
     .footer-container { 
         width: 98%; margin: 0 auto; padding: 2em 0; text-align: left; box-sizing: border-box;
+        display: flex; align-items: center; justify-content: space-between; gap: 20px;
     }
-    .footer-badge { margin-top: 15px; }
-    .footer-badge img { max-height: 50px; width: auto; }
-    .footer-badge-wrap { text-align: right; min-width: 150px; padding-right: 50px; }
+    .footer-info { flex: 1; }
+    .footer-badge { flex-shrink: 0; display: flex; align-items: center; }
+    .footer-badge img { width: 88px; height: 31px; display: block; }
     
 
     /* 頁尾獨立版權條 */
@@ -104,19 +118,17 @@
     .footer-copyright a { color: #fff; text-decoration: underline; }
 
     /* 內容區塊 */
-    .container { display: flex; padding: 1.25em; gap: 1.5em; max-width: 100%; margin: 0 auto; width: 100%; box-sizing: border-box; flex: 1; justify-content: center; }
-    .container-top, .container-bottom { display: flex; flex-wrap: wrap; gap: 15px; padding: 1.25em; max-width: 100%; margin: 0 auto; width: 100%; box-sizing: border-box; align-items: flex-start; justify-content: center; }
-    .container-top > .block-card, .container-bottom > .block-card { width: calc(25% - 12px); box-sizing: border-box; margin-bottom: 0; min-width: 200px; }
+    .container { display: flex; padding: 1em; gap: 1.25em; max-width: 100%; margin: 0 auto; width: 100%; box-sizing: border-box; flex: 1; justify-content: center; }
+    .container-top, .container-bottom { display: flex; flex-wrap: wrap; gap: 12px; padding: 1em; max-width: 100%; margin: 0 auto; width: 100%; box-sizing: border-box; align-items: flex-start; justify-content: center; }
+    .container-top > .block-card, .container-bottom > .block-card { width: calc(25% - 12px); box-sizing: border-box; margin-bottom: 0; min-width: 180px; }
     .container-top > .block-full-width, .container-bottom > .block-full-width { width: 100%; flex: 0 0 100%; }
     .col-left, .col-right { width: 20%; flex: 0 1 20%; } 
     .col-center { width: 60%; flex: 0 1 60%; }
-    /* DOM 順序：center 優先（利於螢幕閱讀器），CSS order 控制視覺位置 */
-    .col-left { order: 1; } .col-center { order: 2; } .col-right { order: 3; }
     .center-content-wrapper { display: flex; flex-wrap: wrap; column-gap: 1.5em; row-gap: 10px; align-content: flex-start; width: 100%; }
     .block-card { margin-bottom: 10px; background: #fff; padding: 10px 10px 5px 10px; border-radius: 5px; width: 100%; box-sizing: border-box; }
     .center-content-wrapper .block-card { margin-bottom: 0 !important; }
     .block-card > *:last-child { margin-bottom: 0 !important; }
-    h2.block-title { font-size: 1.5em; border-bottom: 2px solid #ccc; padding-bottom: 0.1em; margin-bottom: 8px; margin-top: 0; }
+    h2.block-title { font-size: 1.4em; border-bottom: 2px solid #ccc; padding-bottom: 0.1em; margin-bottom: 6px; margin-top: 0; }
 
     /* Tooltip */
     [data-title] { position: relative; }
@@ -129,8 +141,8 @@
     .link-list-horizontal { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
     .link-list-entry { list-style: none; margin-bottom: 5px; }
     .link-list-horizontal .link-list-entry { margin-bottom: 0; }
-    .single-link { display: block; text-decoration: none; color: #333; background-color: #fff; border: 1px solid #ddd; padding: 7px 12px; border-radius: 5px; transition: all 0.2s; }
-    .single-link:hover, .single-link:focus { background-color: #e8f4fd !important; color: #000 !important; border: 2px solid #1a73e8 !important; padding: 6px 11px !important; outline: none; }
+    .single-link { display: block; text-decoration: none; color: #333; background-color: #fff; border: 1px solid #ddd; padding: 12px 15px; border-radius: 5px; transition: all 0.2s; position: relative; }
+    .single-link:hover, .single-link:focus-visible { outline: none !important; background-color: #e6f0fa !important; border-color: #0056b3 !important; box-shadow: inset 0 0 0 1px #0056b3 !important; color: #333 !important; transform: scale(1.03); z-index: 10; }
     
     a.img-link { display: block; text-align: center; margin-bottom: 5px; text-decoration: none; border: 1px solid #eee; padding: 5px; border-radius: 5px; transition: transform 0.2s; position: relative; overflow: visible; }
     a.img-link:hover { transform: scale(1.02); box-shadow: 0 2px 5px rgba(0,0,0,0.1); z-index: 1000; }
@@ -141,8 +153,6 @@
     .html-content { font-size: 1.1em; line-height: 1.5; color: #333; }
     .html-content p { margin: 0 0 0.5em 0; }
     .html-content img { max-width: 100%; height: auto; }
-    .html-content a { color: #2B358C; text-decoration: underline; padding: 0 2px; border-radius: 3px; transition: background-color 0.2s; }
-    .html-content a:hover, .html-content a:focus { background-color: #e8f4fd !important; color: #000 !important; outline: 2px solid #1a73e8 !important; text-decoration: none; }
 
     .back-to-top {
         display: none; 
@@ -150,21 +160,27 @@
         bottom: 30px;
         right: 30px;
         z-index: 9999;
-        font-size: 1.5em;
+        width: 50px;
+        height: 50px;
         border: none;
         outline: none;
-        background-color: #000; 
+        background-color: #333; 
         color: #fff;            
         cursor: pointer;
-        padding: 12px;
         border-radius: 50%;     
         text-decoration: none;
         box-shadow: 0 2px 5px rgba(0,0,0,0.3);
         opacity: 0.8;
         transition: opacity 0.3s, background-color 0.3s;
+        text-align: center;
+        line-height: 50px;
     }
+    .back-to-top svg { vertical-align: middle; position: relative; top: -1px; }
     .back-to-top:hover { opacity: 1; background-color: #2B358C; }
     .back-to-top:focus { outline: 3px solid yellow; opacity: 1; background-color: #2B358C; } 
+
+    /* 區塊佈局寬度注入 */
+     .col-left { width: 30%; flex: 0 1 30%;  } .col-center { width: 70%; flex: 0 1 70%;  } .col-right { width: 0%; flex: 0 1 0%; display: none; }
 
     /* ★★★ 手機版 RWD (這段非常重要，不能刪) ★★★ */
     @media (max-width: 900px) {
@@ -178,58 +194,38 @@
         .nav-menu.active { display: flex; } .nav-item { width: 100%; border-bottom: 1px solid rgba(255,255,255,0.2); }
         .dropdown-content { position: relative; display: block; width: 100%; box-shadow: none; background-color: #2B358C; top: 0; }
         .dropdown-content a { color: #fff; padding-left: 30px; } .nav-item:hover .dropdown-content { display: block; }
-        .container { flex-direction: column; }
-        /* 手機版：重設 order，依 DOM 順序顯示（center 在 DOM 第一，正確） */
-        .col-left, .col-center, .col-right { width: 100%; order: 0; flex: 1 1 100%; }
-        .container-top > .block-card, .container-bottom > .block-card { width: 100%; }
-        .sitemap-list { flex-direction: column; }
-        .top-nav { display: none; }
-        .footer-badge-wrap { text-align: left !important; padding-right: 0 !important; }
-    }
-    /* 減少動態：尊重使用者「減少動態」系統設定 (CS3230300E AAA) */
-    @media (prefers-reduced-motion: reduce) {
-        *, *::before, *::after {
-            animation-duration: 0.01ms !important;
-            animation-iteration-count: 1 !important;
-            transition-duration: 0.01ms !important;
-            scroll-behavior: auto !important;
-        }
-    }
-    
-    @media (min-width: 901px) {
-        .col-left { width: 30% !important; flex: 0 1 30% !important; }
-        .col-center { width: 70% !important; flex: 0 1 70% !important; }
-    }
-    .col-right { display: none !important; }
-    a.access-key {
-        background: transparent !important;
-        background-color: transparent !important;
-        color: rgba(0,0,0,0.35) !important;
-        padding: 1px 6px !important;
-        font-size: 0.72em !important;
-        line-height: 1.4 !important;
-        display: inline-block !important;
-        text-align: left !important;
-        border: none !important;
-        box-shadow: none !important;
+        .container { flex-direction: column !important; padding: 10px !important; gap: 15px !important; }
+        .col-left, .col-center, .col-right { width: 100% !important; order: 0 !important; flex: 1 1 100% !important; }
+        .col-center { order: 1 !important; } .col-left { order: 2 !important; } .col-right { order: 3 !important; }
+        .container-top > .block-card, .container-bottom > .block-card { width: 100% !important; }
+        .sitemap-list { flex-direction: column !important; }
+        .top-nav { display: none !important; } 
+        /* 修正手機版標題過長問題 */
+        .block-card { padding: 10px 10px 5px 10px !important; }
+        .block-title { padding: 8px 10px !important; font-size: 1.25em !important; }
+        
+        /* 手機版頁尾靠左疊加 */
+        .footer-container { flex-direction: column !important; text-align: left !important; padding: 1.5em 20px !important; align-items: flex-start !important; }
+        .footer-info { text-align: left !important; margin-bottom: 10px; }
+        .footer-badge { justify-content: flex-start !important; }
     }
 </style>
 </head><body>
 <a href="#main_content" class="skip-link">跳到主要內容區塊</a>
-<nav class="top-nav" aria-label="上方功能列">
-<div class="top-nav-items" style="display: flex; align-items: center;">
+<div class="top-nav">
+<div class="top-nav-items">
 <a href="#au" id="au" accesskey="U" title="上方功能區" class="access-key">:::</a>
-<a href="sitemap.html#main_content" title="移至網站導覽" aria-label="移至網站導覽" style="display: inline-flex; align-items: center; justify-content: center; padding: 2px;">
-    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" style="fill: #fff;">
-        <rect x="6" y="3" width="12" height="6" rx="1.5" />
-        <rect x="3" y="15" width="7" height="6" rx="1.5" />
-        <rect x="14" y="15" width="7" height="6" rx="1.5" />
-        <path d="M12 9v3M6.5 12v3M17.5 12v3M6.5 12h11" fill="none" stroke="#fff" stroke-width="2" />
-    </svg>
+<a href="sitemap.html" title="移至 網站導覽" aria-label="網站導覽" class="sitemap-top-link" style="display: inline-flex; align-items: center;">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+  <rect x="4" y="3" width="16" height="6" rx="1.5" fill="currentColor"></rect>
+  <rect x="2" y="15" width="8" height="6" rx="1.5" fill="currentColor"></rect>
+  <rect x="14" y="15" width="8" height="6" rx="1.5" fill="currentColor"></rect>
+  <path d="M12 9 v3.5 H6 v2.5 M12 12.5 h6 v2.5" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"></path>
+</svg>
 </a>
 </div>
-</nav>
-<header class="header">
+</div>
+<div class="header">
 <div class="header-left">
 <a href="./" class="logo-link" title="返回首頁">
 <img src="images/isecurity.png" alt="學校校徽" class="school-logo" />
@@ -238,479 +234,323 @@
 <div class="header-right">
 </div>
 <button class="hamburger" id="hamburger" aria-label="開啟選單">☰</button>
-</header>
+</div>
 
-<nav class="navbar" aria-label="主要導覽選單"><div class="nav-container"><ul class="nav-menu" id="nav-menu">
-<li class="nav-item mobile-only"><a href="./" class="nav-link">首頁</a></li>
-<li class="nav-item mobile-only"><a href="sitemap.html#main_content" aria-label="網站導覽 (移至網站導覽)" title="網站導覽 (移至網站導覽)" class="nav-link">網站導覽</a></li>
-<li class="nav-item">
-<a href="javascript:void(0);" role="button" class="nav-link" aria-haspopup="true" aria-expanded="false" style="border:none;background-color:transparent;cursor:pointer;">校園各項服務系統 ▼</a>
+<nav class="navbar"><div class="nav-container"><ul class="nav-menu" id="nav-menu">
+<li class="nav-item mobile-only"><a href="./" class="nav-link" title="移至 首頁">首頁</a></li>
+<li class="nav-item mobile-only"><a href="sitemap.html" class="nav-link" title="移至 網站導覽">網站導覽</a></li>
+<li class="nav-item"><a href="#" class="nav-link" aria-haspopup="true" title="移至 校園各項服務系統">校園各項服務系統 ▾</a>
 <div class="dropdown-content">
-<a href="https://esa.ntpc.edu.tw" target="_blank" aria-label="校務行政系統 (另開新視窗)" title="校務行政系統 (另開新視窗)" class="nav-link" style="text-align:left;">校務行政系統</a>
-<a href="https://pts.ntpc.edu.tw/" target="_blank" aria-label="新北市親師生平台 (另開新視窗)" title="新北市親師生平台 (另開新視窗)" class="nav-link" style="text-align:left;">新北市親師生平台</a>
-<a href="https://drive.google.com/a/apps.ntpc.edu.tw" target="_blank" aria-label="三多教學充電站 (另開新視窗)" title="三多教學充電站 (另開新視窗)" class="nav-link" style="text-align:left;">三多教學充電站</a>
-<a href="https://sso.ntpc.edu.tw/login.aspx?SAMLRequest=fVJNT9wwEL1X4j9YvudjA4fW2gQtIMRKtI3YwIGb15lNvDgzqcfZtP%2B%2B2SwIeijX5zfvYzzLy9%2BdEwfwbAlzuYhTKQAN1RabXD5Wt9FXeVmcfVmy7lyvVkNo8QF%2BDcBBTJPIan7I5eBRkWbLCnUHrIJRm9X3e5XFqeo9BTLkpFjf5HK7JdOYPba9e9F72uq6IY0vuK%2FJIbQt7Osddb2W4uktVnaMtWYeYI0cNIYJSrMsSr9F6XmVZuo8VenFsxTlq9OVxVODz2JtTyRWd1VVRuXPTTULHGwN%2FsfEzmVD1DiIDXVH%2B1Iz28ME77RjkGLFDD5MAa8JeejAb8AfrIHHh%2FtctiH0rJJkHMf4XSbRCYbexFAPcRgTbVgW82rV3M5%2F2Onn2fWbtyze1ZfJB6ni9cuOTdY3JTlr%2FoiVczRee9BhqhH8MLW4Jd%2Fp8H%2B3RbyYEVtHu5mqBuQejN1ZqKVIipPrv7cxXcxf&RelayState=https%3A%2F%2Fwww.google.com%2Fa%2Fapps.ntpc.edu.tw%2FServiceLogin%3Fcontinue%3Dhttps%253A%252F%252Fclassroom.google.com%252F%26passive%3Dtrue" target="_blank" aria-label="師生Google Classroom (另開新視窗)" title="師生Google Classroom (另開新視窗)" class="nav-link" style="text-align:left;">師生Google Classroom</a>
-</div>
-</li>
-<li class="nav-item">
-<a href="javascript:void(0);" role="button" class="nav-link" aria-haspopup="true" aria-expanded="false" style="border:none;background-color:transparent;cursor:pointer;">資訊設備使用說明 ▼</a>
+<a href="https://esa.ntpc.edu.tw" target="_blank" rel="noopener" title="移至 校務行政系統 (另開新視窗)">校務行政系統</a>
+<a href="https://pts.ntpc.edu.tw/" target="_blank" rel="noopener" title="移至 新北市親師生平台 (另開新視窗)">新北市親師生平台</a>
+<a href="https://drive.google.com/a/apps.ntpc.edu.tw" target="_blank" rel="noopener" title="移至 三多教學充電站 (另開新視窗)">三多教學充電站</a>
+<a href="https://sso.ntpc.edu.tw/login.aspx?SAMLRequest=fVJNT9wwEL1X4j9YvudjA4fW2gQtIMRKtI3YwIGb15lNvDgzqcfZtP%2B%2B2SwIeijX5zfvYzzLy9%2BdEwfwbAlzuYhTKQAN1RabXD5Wt9FXeVmcfVmy7lyvVkNo8QF%2BDcBBTJPIan7I5eBRkWbLCnUHrIJRm9X3e5XFqeo9BTLkpFjf5HK7JdOYPba9e9F72uq6IY0vuK%2FJIbQt7Osddb2W4uktVnaMtWYeYI0cNIYJSrMsSr9F6XmVZuo8VenFsxTlq9OVxVODz2JtTyRWd1VVRuXPTTULHGwN%2FsfEzmVD1DiIDXVH%2B1Iz28ME77RjkGLFDD5MAa8JeejAb8AfrIHHh%2FtctiH0rJJkHMf4XSbRCYbexFAPcRgTbVgW82rV3M5%2F2Onn2fWbtyze1ZfJB6ni9cuOTdY3JTlr%2FoiVczRee9BhqhH8MLW4Jd%2Fp8H%2B3RbyYEVtHu5mqBuQejN1ZqKVIipPrv7cxXcxf&RelayState=https%3A%2F%2Fwww.google.com%2Fa%2Fapps.ntpc.edu.tw%2FServiceLogin%3Fcontinue%3Dhttps%253A%252F%252Fclassroom.google.com%252F%26passive%3Dtrue" target="_blank" rel="noopener" title="移至 師生Google Classroom (另開新視窗)">師生Google Classroom</a>
+</div></li>
+<li class="nav-item"><a href="#" class="nav-link" aria-haspopup="true" title="移至 資訊設備使用說明">資訊設備使用說明 ▾</a>
 <div class="dropdown-content">
-<a href="01.html#main_content" target="_self" aria-label="移至 86吋觸控電視" title="移至 86吋觸控電視" class="nav-link" style="text-align:left;">86吋觸控電視</a>
-<a href="02.html#main_content" target="_self" aria-label="移至 教學電腦" title="移至 教學電腦" class="nav-link" style="text-align:left;">教學電腦</a>
-<a href="https://esa.ntpc.edu.tw/web-maintain/templates/maintain_pub.html?schno=014767" target="_blank" aria-label="資訊設備報修 (另開新視窗)" title="資訊設備報修 (另開新視窗)" class="nav-link" style="text-align:left;">資訊設備報修</a>
-</div>
-</li>
-<li class="nav-item">
-<a href="javascript:void(0);" role="button" class="nav-link" aria-haspopup="true" aria-expanded="false" style="border:none;background-color:transparent;cursor:pointer;">生生用平板 ▼</a>
+<a href="01.html" title="移至 86吋觸控電視">86吋觸控電視</a>
+<a href="02.html" title="移至 教學電腦">教學電腦</a>
+<a href="https://esa.ntpc.edu.tw/web-maintain/templates/maintain_pub.html?schno=014767" target="_blank" rel="noopener" title="移至 資訊設備報修 (另開新視窗)">資訊設備報修</a>
+</div></li>
+<li class="nav-item"><a href="#" class="nav-link" aria-haspopup="true" title="移至 生生用平板">生生用平板 ▾</a>
 <div class="dropdown-content">
-<a href="03.html#main_content" target="_self" aria-label="移至 iPad進行教學注意事項" title="移至 iPad進行教學注意事項" class="nav-link" style="text-align:left;">iPad進行教學注意事項</a>
-</div>
-</li>
-<li class="nav-item">
-<a href="javascript:void(0);" role="button" class="nav-link" aria-haspopup="true" aria-expanded="false" style="border:none;background-color:transparent;cursor:pointer;">資訊安全 ▼</a>
+<a href="03.html" title="移至 iPad進行教學注意事項">iPad進行教學注意事項</a>
+</div></li>
+<li class="nav-item"><a href="#" class="nav-link" aria-haspopup="true" title="移至 資訊安全">資訊安全 ▾</a>
 <div class="dropdown-content">
-<a href="04.html#main_content" target="_self" aria-label="移至 資安法規" title="移至 資安法規" class="nav-link" style="text-align:left;">資安法規</a>
-</div>
-</li>
+<a href="04.html" title="移至 資安法規">資安法規</a>
+</div></li>
 
 </ul></div></nav>
 
 <div class="banner-container"><img src="images/banner.png" alt="網站橫幅，內容是Welcome To 數位資安資訊網" class="banner-img" tabindex="0" /></div>
-<div class="container-top"><div style="width: 100%; margin-bottom: -5px;"><a href="#at" id="at" accesskey="T" title="上方連結區" class="access-key">:::</a></div>
-<div class="block-card block-full-width soft-border-card" id="blk-top-0" style="border: 1px solid #dde3ec; border-radius: 10px; background: #f9fafc; overflow: hidden;">
-<h2 class="block-title" style="height:0;padding:0;margin:0;overflow:hidden;font-size:0;border:0;" tabindex="-1">跑馬燈</h2>
-<style>
-@keyframes marquee-scroll-top-0 {
-    0%   { transform: translateX(0%); }
-    100% { transform: translateX(-100%); }
-}
-.mq-anim-top-0 {
-    display: inline-block;
-    white-space: nowrap;
-    padding-left: 100%;
-    animation: marquee-scroll-top-0 18s linear infinite;
-}
-.mq-anim-top-0.paused {
-    animation-play-state: paused !important;
-}
-#mq-btn-top-0:hover {
-    background-color: #ff9900 !important; color: #000 !important; outline: none !important;
-}
-#mq-btn-top-0:focus-visible {
-    background-color: #ff9900 !important; color: #000 !important;
-    outline: 2px solid #fff !important; outline-offset: 1px !important;
-    box-shadow: 0 0 0 4px #000 !important;
-}
-</style>
-<div style="display: flex; align-items: center; background: #fff; padding: 8px 10px; border: 1px solid #eee; border-radius: 5px; gap: 10px;">
-    <button id="mq-btn-top-0" aria-label="暫停播放跑馬燈" title="暫停播放跑馬燈" style="white-space: nowrap; background: #333; color: #fff; border: none; padding: 4px 10px; border-radius: 4px; cursor: pointer; font-size: 0.85em; font-weight: bold; letter-spacing: 1px;">|| 暫停</button>
-    <div id="mq-wrapper-top-0" tabindex="0" style="flex: 1; overflow: hidden;" role="region" aria-roledescription="marquee" aria-live="off" onfocus="this.style.outline='2px solid #fff'; this.style.outlineOffset='1px'; this.style.boxShadow='0 0 0 4px #000';" onblur="this.style.outline='none'; this.style.outlineOffset=''; this.style.boxShadow='';">  
-        <div id="mq-content-top-0" class="mq-anim-top-0">
-<span style="margin-right: 40px; color: #333;">新北市樹林區三多國民小學-數位資安資訊網</span>
-        </div>
-    </div>
-</div>
-<script>
-(function(){
-    var wrapper = document.getElementById("mq-wrapper-top-0");
-    var content = document.getElementById("mq-content-top-0");
-    var btn = document.getElementById("mq-btn-top-0");
-    
-    // 尊重「減少動態」系統設定 (CS3230300E AAA)
-    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        content.classList.add("paused");
-        btn.innerHTML = "&#9654; 播放";
-        btn.setAttribute("aria-label", "自動播放跑馬燈");
-        btn.setAttribute("title", "自動播放跑馬燈");
-        wrapper.setAttribute("aria-live", "polite");
-    }
-    
-    btn.addEventListener("click", function() {
-        if(content.classList.contains("paused")) {
-            content.classList.remove("paused");
-            btn.innerHTML = "|| 暫停";
-            btn.setAttribute("aria-label", "暫停播放跑馬燈");
-            btn.setAttribute("title", "暫停播放跑馬燈");
-            wrapper.setAttribute("aria-live", "off");
-        } else {
-            content.classList.add("paused");
-            btn.innerHTML = "&#9654; 播放";
-            btn.setAttribute("aria-label", "自動播放跑馬燈");
-            btn.setAttribute("title", "自動播放跑馬燈");
-            wrapper.setAttribute("aria-live", "polite");
-        }
-    });
-    
-    wrapper.addEventListener("focusin", function() { content.classList.add("paused"); });
-    wrapper.addEventListener("focusout", function() { 
-        if(btn.innerHTML === "|| 暫停") content.classList.remove("paused"); 
-    });
-    
-    wrapper.addEventListener("mouseover", function() { content.classList.add("paused"); });
-    wrapper.addEventListener("mouseout", function() { 
-        if(btn.innerHTML === "|| 暫停") content.classList.remove("paused"); 
-    });
-})();
-</script>
-</div>
+<div class="container-top"><div style="flex-basis:100%; text-align:left; margin-bottom:-5px;"><a href="#at" id="at" accesskey="T" title="上方連結區" class="access-key">:::</a></div>
+<div id="top-0" class="block-card soft-border-card" style="border: 1px solid #dde3ec; border-radius: 10px; background: #f9fafc; overflow: hidden; margin-bottom: 15px; flex: 0 0 100%;">
+<h2 class="block-title" style="position:absolute; width:1px; height:1px; margin:-1px; padding:0; overflow:hidden; clip:rect(0,0,0,0); border:0;" tabindex="-1">跑馬燈</h2>
+<div class="block-content-area" style="padding: 12px 0;">
 
+                        <style>
+                        @keyframes marquee-top-0 { 0% { transform: translateX(0%); } 100% { transform: translateX(-100%); } }
+                        .mq-anim-top-0 { display: inline-block; white-space: nowrap; padding-left: 100%; animation: marquee-top-0 20s linear infinite; }
+                        .mq-anim-top-0.paused { animation-play-state: paused !important; }
+                        .mq-btn-styles { white-space: nowrap; background: #333; color: #fff; border: none; padding: 4px 10px; border-radius: 4px; cursor: pointer; font-family: inherit; }
+                        .mq-btn-styles:hover { background: #ff9900 !important; color:#000 !important; }
+                        .mq-btn-styles:focus { outline:3px solid #ff9900; box-shadow:0 0 0 5px #000; }
+                        </style>
+                        <div style="display: flex; align-items: center; background: #fff; padding: 8px 10px; border: 1px solid #eee; border-radius: 5px; gap: 10px;">
+                            <button id="mq-btn-top-0" aria-label="暫停播放跑馬燈" title="暫停播放跑馬燈" class="mq-btn-styles">|| 暫停</button>
+                            <div id="mq-wrapper-top-0" tabindex="0" style="flex: 1; overflow: hidden;" role="region" aria-roledescription="marquee" aria-live="off">  
+                                <div id="mq-content-top-0" class="mq-anim-top-0">
+                                    <span style="color: #333; font-size:1.1em; font-weight:bold;">新北市樹林區三多國民小學-數位資安資訊網</span>
+                                </div>
+                            </div>
+                        </div>
+                        <script>
+                        (function(){
+                            var w = document.getElementById("mq-wrapper-top-0");
+                            var c = document.getElementById("mq-content-top-0");
+                            var b = document.getElementById("mq-btn-top-0");
+                            if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                                c.classList.add("paused"); b.innerHTML = "&#9654; 播放"; b.setAttribute("aria-label", "自動播放跑馬燈"); b.setAttribute("title", "自動播放跑馬燈"); w.setAttribute("aria-live", "polite");
+                            }
+                            b.addEventListener("click", function() {
+                                if(c.classList.contains("paused")) { c.classList.remove("paused"); b.innerHTML = "|| 暫停"; b.setAttribute("aria-label", "暫停播放跑馬燈"); b.setAttribute("title", "暫停播放跑馬燈"); w.setAttribute("aria-live", "off"); }
+                                else { c.classList.add("paused"); b.innerHTML = "&#9654; 播放"; b.setAttribute("aria-label", "自動播放跑馬燈"); b.setAttribute("title", "自動播放跑馬燈"); w.setAttribute("aria-live", "polite"); }
+                            });
+                            w.addEventListener("focusin", function() { c.classList.add("paused"); w.style.outline="3px solid #ff9900"; w.style.boxShadow="0 0 0 5px #000"; });
+                            w.addEventListener("focusout", function() { if(b.innerHTML === "|| 暫停") c.classList.remove("paused"); w.style.outline="none"; w.style.boxShadow="none"; });
+                            w.addEventListener("mouseover", function() { c.classList.add("paused"); });
+                            w.addEventListener("mouseout", function() { if(b.innerHTML === "|| 暫停") c.classList.remove("paused"); });
+                        })();
+                        </script>
+                        </div>
+</div>
 </div>
 <div class="container">
-<!-- 主要內容區放 DOM 第一，利於螢幕閱讀器；視覺位置由 CSS order 控制 -->
+<aside class="col-left">
+<a href="#al" id="al" accesskey="L" title="左側區塊" class="access-key">:::</a>
+
+<div id="left-0" class="block-card soft-border-card" style="border: 1px solid #dde3ec; border-radius: 10px; background: #f9fafc; overflow: hidden; margin-bottom: 15px;">
+<div style="text-align: center;"><h2 class="block-title" style="color: #FFFFFF; background-color: #2B358C; padding: 6px 12px; border-radius: 5px; text-align: center; margin: 0;" tabindex="-1">數位學習相關網站</h2></div>
+<div class="block-content-area" style="padding: 12px 0;">
+<div class="link-list-container " style="display:flex; flex-direction:column; gap:6px;">
+<a href="https://cloud.edu.tw/" target="_blank" rel="noopener noreferrer" aria-label="移至 教育雲數位學習入口 (另開新視窗)" title="移至 教育雲數位學習入口 (另開新視窗)" class="single-link" style="display:block; padding:10px 15px; border:1px solid #ddd; border-radius:4px; color:#333; text-decoration:none; background:#fff;"><span>教育雲數位學習入口</span></a>
+<a href="https://adl.edu.tw/" target="_blank" rel="noopener noreferrer" aria-label="移至 教育部因材網 (另開新視窗)" title="移至 教育部因材網 (另開新視窗)" class="single-link" style="display:block; padding:10px 15px; border:1px solid #ddd; border-radius:4px; color:#333; text-decoration:none; background:#fff;"><span>教育部因材網</span></a>
+<a href="https://scitechvista.nat.gov.tw/" target="_blank" rel="noopener noreferrer" aria-label="移至 科技大觀園 (另開新視窗)" title="移至 科技大觀園 (另開新視窗)" class="single-link" style="display:block; padding:10px 15px; border:1px solid #ddd; border-radius:4px; color:#333; text-decoration:none; background:#fff;"><span>科技大觀園</span></a>
+<a href="https://pts.ntpc.edu.tw/" target="_blank" rel="noopener noreferrer" aria-label="移至 新北市親師生平台 (另開新視窗)" title="移至 新北市親師生平台 (另開新視窗)" class="single-link" style="display:block; padding:10px 15px; border:1px solid #ddd; border-radius:4px; color:#333; text-decoration:none; background:#fff;"><span>新北市親師生平台</span></a>
+<a href="https://moocs.moe.edu.tw/moocs/" target="_blank" rel="noopener noreferrer" aria-label="移至 教育部磨課師平臺 (另開新視窗)" title="移至 教育部磨課師平臺 (另開新視窗)" class="single-link" style="display:block; padding:10px 15px; border:1px solid #ddd; border-radius:4px; color:#333; text-decoration:none; background:#fff;"><span>教育部磨課師平臺</span></a>
+<a href="http://estudy.ntpc.edu.tw/" target="_blank" rel="noopener noreferrer" aria-label="移至 新北市數位學習影音網 (另開新視窗)" title="移至 新北市數位學習影音網 (另開新視窗)" class="single-link" style="display:block; padding:10px 15px; border:1px solid #ddd; border-radius:4px; color:#333; text-decoration:none; background:#fff;"><span>新北市數位學習影音網</span></a>
+<a href="https://pads.moe.edu.tw/" target="_blank" rel="noopener noreferrer" aria-label="移至 推動中小學數位學習精進方案入口網 (另開新視窗)" title="移至 推動中小學數位學習精進方案入口網 (另開新視窗)" class="single-link" style="display:block; padding:10px 15px; border:1px solid #ddd; border-radius:4px; color:#333; text-decoration:none; background:#fff;"><span>推動中小學數位學習精進方案入口網</span></a>
+<a href="https://digit.ntpc.edu.tw/" target="_blank" rel="noopener noreferrer" aria-label="移至 新北星聯盟 (另開新視窗)" title="移至 新北星聯盟 (另開新視窗)" class="single-link" style="display:block; padding:10px 15px; border:1px solid #ddd; border-radius:4px; color:#333; text-decoration:none; background:#fff;"><span>新北星聯盟</span></a>
+<a href="https://isafeevent.moe.edu.tw/" target="_blank" rel="noopener noreferrer" aria-label="移至 全民資訊素養自我評量 (另開新視窗)" title="移至 全民資訊素養自我評量 (另開新視窗)" class="single-link" style="display:block; padding:10px 15px; border:1px solid #ddd; border-radius:4px; color:#333; text-decoration:none; background:#fff;"><span>全民資訊素養自我評量</span></a>
+<a href="https://eliteracy.edu.tw/" target="_blank" rel="noopener noreferrer" aria-label="移至 中小學數位素養教育資源網 (另開新視窗)" title="移至 中小學數位素養教育資源網 (另開新視窗)" class="single-link" style="display:block; padding:10px 15px; border:1px solid #ddd; border-radius:4px; color:#333; text-decoration:none; background:#fff;"><span>中小學數位素養教育資源網</span></a>
+</div>
+</div>
+</div>
+<div id="left-1" class="block-card soft-border-card" style="border: 1px solid #dde3ec; border-radius: 10px; background: #f9fafc; overflow: hidden; margin-bottom: 15px;">
+<div style="text-align: center;"><h2 class="block-title" style="color: #FFFFFF; background-color: #2B358C; padding: 6px 12px; border-radius: 5px; text-align: center; margin: 0;" tabindex="-1">資安法規相關連結</h2></div>
+<div class="block-content-area" style="padding: 12px 0;">
+<div class="link-list-container " style="display:flex; flex-direction:column; gap:6px;">
+<a href="https://moda.gov.tw/ACS/laws/faq/630" target="_blank" rel="noopener noreferrer" aria-label="移至 資安法常見問題 (另開新視窗)" title="移至 資安法常見問題 (另開新視窗)" class="single-link" style="display:block; padding:10px 15px; border:1px solid #ddd; border-radius:4px; color:#333; text-decoration:none; background:#fff;"><span>資安法常見問題</span></a>
+<a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0030297" target="_blank" rel="noopener noreferrer" aria-label="移至 資通安全管理法 (另開新視窗)" title="移至 資通安全管理法 (另開新視窗)" class="single-link" style="display:block; padding:10px 15px; border:1px solid #ddd; border-radius:4px; color:#333; text-decoration:none; background:#fff;"><span>資通安全管理法</span></a>
+<a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0030303" target="_blank" rel="noopener noreferrer" aria-label="移至 資通安全管理法施行細則 (另開新視窗)" title="移至 資通安全管理法施行細則 (另開新視窗)" class="single-link" style="display:block; padding:10px 15px; border:1px solid #ddd; border-radius:4px; color:#333; text-decoration:none; background:#fff;"><span>資通安全管理法施行細則</span></a>
+<a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0030304" target="_blank" rel="noopener noreferrer" aria-label="移至 資通安全責任等級分級辦法 (另開新視窗)" title="移至 資通安全責任等級分級辦法 (另開新視窗)" class="single-link" style="display:block; padding:10px 15px; border:1px solid #ddd; border-radius:4px; color:#333; text-decoration:none; background:#fff;"><span>資通安全責任等級分級辦法</span></a>
+</div>
+</div>
+</div>
+<div id="left-2" class="block-card soft-border-card" style="border: 1px solid #dde3ec; border-radius: 10px; background: #f9fafc; overflow: hidden; margin-bottom: 15px;">
+<div style="text-align: center;"><h2 class="block-title" style="color: #FFFFFF; background-color: #2B358C; padding: 6px 12px; border-radius: 5px; text-align: center; margin: 0;" tabindex="-1">宣導網站</h2></div>
+<div class="block-content-area" style="padding: 12px 0;">
+<div class="link-list-container " style="display:flex; flex-direction:column; gap:6px;">
+<a href="https://moda.gov.tw/" target="_blank" rel="noopener noreferrer" aria-label="移至 數位發展部 (另開新視窗)" title="移至 數位發展部 (另開新視窗)" class="single-link" style="display:block; padding:10px 15px; border:1px solid #ddd; border-radius:4px; color:#333; text-decoration:none; background:#fff;"><span>數位發展部</span></a>
+<a href="https://accessibility.moda.gov.tw/" target="_blank" rel="noopener noreferrer" aria-label="移至 無障礙網路空間服務網 (另開新視窗)" title="移至 無障礙網路空間服務網 (另開新視窗)" class="single-link" style="display:block; padding:10px 15px; border:1px solid #ddd; border-radius:4px; color:#333; text-decoration:none; background:#fff;"><span>無障礙網路空間服務網</span></a>
+</div>
+</div>
+</div>
+
+</aside>
 <main class="col-center" id="main_content" tabindex="-1" style="outline: none;"><a href="#ac" id="ac" accesskey="C" title="主要內容區" class="access-key">:::</a>
 <div class="center-content-wrapper">
-<div class="block-card soft-border-card" id="blk-center-0" style="border: 1px solid #dde3ec; border-radius: 10px; background: #f9fafc; overflow: hidden;">
-<h2 class="block-title" style="color: #FFFFFF; background-color: #2B358C; padding: 6px 12px; border-radius: 5px; text-align: center;" tabindex="-1">公告訊息</h2>
-<style>
-.announcement-item summary { transition: all 0.2s; }
-.announcement-item summary:hover, .announcement-item summary:focus, .announcement-item summary:focus-visible { background-color: #e8f4fd !important; outline: 2px solid #1a73e8 !important; outline-offset: -2px !important; }
-.announcement-item summary:hover strong, .announcement-item summary:focus strong, .announcement-item summary:focus-visible strong { color: #000 !important; }
-</style>
-<div class="announcement-list" style="margin-top: 15px;">
-<details class="announcement-item" style="margin-bottom: 15px; border: 1px solid #cce0f5; border-radius: 4px; background: #fff; transition: border-color 0.2s;" onmouseover="this.style.borderColor='#4a86af'" onmouseout="this.style.borderColor='#cce0f5'">
-<summary tabindex="0" style="padding: 12px 15px; cursor: pointer; background: #f4f8fc; border-radius: 3px 3px 0 0; line-height: 1.6; list-style-position: inside; outline-offset: 2px;" aria-label="按下 Enter 鍵展開讀取公告內容：為維護校務行政系統（以下簡稱本系統）資訊安全，本局將啟用登入安全措施，請查照。" title="展開公告：為維護校務行政系統（以下簡稱本系統）資訊安全，本局將啟用登入安全措施，請查照。"><span style="display: inline-block; background-color: #8c2828; color: #fff; padding: 3px 10px; font-size: 0.9em; margin-right: 12px; vertical-align: middle; box-shadow: 1px 1px 3px rgba(0,0,0,0.2); border-radius: 2px;">115-03-27</span><strong style="color: #111; vertical-align: middle; font-size: 1.05em;">為維護校務行政系統（以下簡稱本系統）資訊安全，本局將啟用登入安全措施，請查照。</strong></summary>
-<div class="announcement-content" style="padding: 15px 20px; border-top: 1px solid #cce0f5; background: #fff;">
-<div style="margin-top: 0; line-height: 1.6; color: #333; white-space: pre-wrap; word-break: break-word; font-size: 1.0em;">一、 依據資通安全責任等級分級辦法辦理。
-二、 本系統將啟用4大安全措施，說明如下：
-(一)強化密碼安全原則：
-１、 適用對象：本系統所有使用者。
-２、 辦法說明：弱密碼自設定起7日以上未符合密碼安全原則者，將予以停用帳號之處置，須由校端管理人員執行密碼還原後重新啟用。弱密碼型態由局端認定，至少包含系統預設之3種密碼還原選項，未來視情況調整期限將不另行通知。
-３、 啟用時間：即日起。
-(二)遵循最低權限原則：
-１、 適用對象：科任教師。
-２、 辦法說明：移除「學生帳號管理」模組權限並停用相關設定功能。
-３、 啟用時間：即日起。
-(三)強制多重因子驗證：
-１、 適用對象：本局人員暨所屬教職員工、家長及志工等非學生者。
-２、 辦法說明：登入本系統、校園通APP、單一簽入時除帳密驗證外，強制選擇電子郵件信箱、手機簡訊或行動應用程式一次性密碼進行第二階段驗證。
-３、 啟用時間：本年度4月起陸續執行。
-(四)限制網路位址存取：
-１、 適用對象：校端最高管理帳號（ROOT）及具有特權模組存取權者。
-２、 特權模組：人事資料管理、新/舊學籍管理、學生帳號設定、校園志工管理、家長人事管理、教師帳號管
-理、學生帳號管理、志工帳號管理、家長帳號管理、處室權限控管、異動管理等（視需求動態調整清單）。
-３、 辦法說明：特權模組之操作將限制網路來源位置，僅各校內部私有行政人員專用網段可使用，並請各校管理者審慎評估特權模組之權限開放人員。
-４、 啟用時間：本年度4月起開始陸續執行。
-三、 請各校協助宣導所有使用者應避免長期使用預設密碼；並務必通知所屬非學生身分者，至本系統完成「主要信箱」、「備用信箱」及「行動電話」3項資料驗證，以確保帳號安全性及避免影響系統使用。</div>
-<div class="announcement-files" style="margin-top: 15px; padding-top: 15px; border-top: 1px dashed #ccc;">
-<div style="margin-bottom: 8px;"><span style="color: #666; font-size: 0.95em; font-weight: bold;">📎 附件下載：</span><br>
-<a href="files/公文.pdf" aria-label="按下 Enter 鍵下載附件：公文.pdf（PDF 格式）（另開新視窗）" title="下載附件：公文.pdf（PDF 格式）（另開新視窗）" target="_blank" style="display: inline-block; margin: 8px 10px 5px 0; padding: 6px 12px; background: #eef3f7; border: 1px solid #cce; border-radius: 4px; color: #003377; text-decoration: none; font-size: 0.95em; transition: all 0.2s;" onmouseover="this.style.background='#ff9900'; this.style.color='#000'; this.style.border='1px solid #ff9900';" onmouseout="this.style.background='#eef3f7'; this.style.color='#003377'; this.style.border='1px solid #cce'; this.style.outline='none'; this.style.boxShadow='none';" onfocus="this.style.background='#ff9900'; this.style.color='#000'; this.style.outline='2px solid #fff'; this.style.boxShadow='0 0 0 4px #000';" onblur="this.style.background='#eef3f7'; this.style.color='#003377'; this.style.outline='none'; this.style.boxShadow='none';">📄 公文.pdf <span style="font-size:0.8em; background:#c8d8ee; border-radius:3px; padding:1px 5px; margin-left:4px; font-weight:bold;">PDF</span></a>
+<div id="center-0" class="block-card soft-border-card" style="border: 1px solid #dde3ec; border-radius: 10px; background: #f9fafc; overflow: hidden; margin-bottom: 15px;">
+<div style="text-align: center;"><h2 class="block-title" style="color: #FFFFFF; background-color: #2B358C; padding: 6px 12px; border-radius: 5px; text-align: center; margin: 0;" tabindex="-1">公告訊息</h2></div>
+<div class="block-content-area" style="padding: 12px 0;">
+<style>details.announce-blk summary::-webkit-details-marker { display:none; } details.announce-blk summary { list-style:none; outline:none; border-radius:4px; transition:all 0.2s; } details.announce-blk summary:hover, details.announce-blk summary:focus-visible { outline: none !important; background-color: #e6f0fa !important; box-shadow: inset 0 0 0 2px #0056b3 !important; color: #333 !important; } details.announce-blk .announce-icon { display:inline-block; transition:transform 0.2s; } details.announce-blk[open] .announce-icon { transform: rotate(90deg); } </style>
+<div class="html-content announcement-list">
+<details class="announce-blk schedulable-block" data-publish="115-03-27" style="border:1px solid #eff0f3; border-radius:4px; margin-bottom:8px; background:#fbfbfb;">
+<summary style="display:flex; align-items:flex-start; gap:10px; padding:12px 15px; cursor:pointer;">
+<span class="announce-icon" style="color:#2B358C; font-size:0.85em; margin-top:4px;">▶</span>
+<span style="background-color:#A02020; color:#fff; padding:3px 8px; border-radius:3px; font-size:0.9em; white-space:nowrap; font-weight:bold;">115-03-27</span>
+<span style="color:#000; font-size:1.05em; line-height:1.4;">為維護校務行政系統（以下簡稱本系統）資訊安全，本局將啟用登入安全措施，請查照。</span>
+</summary>
+<div style="padding:10px 15px 15px 35px; border-top:1px dashed #ddd;">
+<div style="margin-bottom:8px; line-height:1.6; color:#444; font-size:0.95em;">一、 依據資通安全責任等級分級辦法辦理。<br>二、 本系統將啟用4大安全措施，說明如下：<br>(一)強化密碼安全原則：<br>１、 適用對象：本系統所有使用者。<br>２、 辦法說明：弱密碼自設定起7日以上未符合密碼安全原則者，將予以停用帳號之處置，須由校端管理人員執行密碼還原後重新啟用。弱密碼型態由局端認定，至少包含系統預設之3種密碼還原選項，未來視情況調整期限將不另行通知。<br>３、 啟用時間：即日起。<br>(二)遵循最低權限原則：<br>１、 適用對象：科任教師。<br>２、 辦法說明：移除「學生帳號管理」模組權限並停用相關設定功能。<br>３、 啟用時間：即日起。<br>(三)強制多重因子驗證：<br>１、 適用對象：本局人員暨所屬教職員工、家長及志工等非學生者。<br>２、 辦法說明：登入本系統、校園通APP、單一簽入時除帳密驗證外，強制選擇電子郵件信箱、手機簡訊或行動應用程式一次性密碼進行第二階段驗證。<br>３、 啟用時間：本年度4月起陸續執行。<br>(四)限制網路位址存取：<br>１、 適用對象：校端最高管理帳號（ROOT）及具有特權模組存取權者。<br>２、 特權模組：人事資料管理、新/舊學籍管理、學生帳號設定、校園志工管理、家長人事管理、教師帳號管<br>理、學生帳號管理、志工帳號管理、家長帳號管理、處室權限控管、異動管理等（視需求動態調整清單）。<br>３、 辦法說明：特權模組之操作將限制網路來源位置，僅各校內部私有行政人員專用網段可使用，並請各校管理者審慎評估特權模組之權限開放人員。<br>４、 啟用時間：本年度4月起開始陸續執行。<br>三、 請各校協助宣導所有使用者應避免長期使用預設密碼；並務必通知所屬非學生身分者，至本系統完成「主要信箱」、「備用信箱」及「行動電話」3項資料驗證，以確保帳號安全性及避免影響系統使用。</div>
+<div class="attachment-area">
+  <div class="attachment-header">📎 附件下載：</div>
+  <div class="attachment-list">
+    <a href="公文.pdf" target="_blank" class="attachment-card" aria-label="下載附件 公文.pdf (另開新視窗)" title="下載附件 公文.pdf (另開新視窗)">
+                                      <span class="file-icon">📄</span>
+                                      <span class="file-name">公文.pdf</span>
+                                      <span class="file-badge">PDF</span>
+                                    </a>
+  </div>
 </div>
 </div>
+</details>
+<details class="announce-blk schedulable-block" data-publish="115-03-27" data-expire="115-04-01" style="border:1px solid #eff0f3; border-radius:4px; margin-bottom:8px; background:#fbfbfb;">
+<summary style="display:flex; align-items:flex-start; gap:10px; padding:12px 15px; cursor:pointer;">
+<span class="announce-icon" style="color:#2B358C; font-size:0.85em; margin-top:4px;">▶</span>
+<span style="background-color:#A02020; color:#fff; padding:3px 8px; border-radius:3px; font-size:0.9em; white-space:nowrap; font-weight:bold;">115-03-27</span>
+<span style="color:#000; font-size:1.05em; line-height:1.4;">QNAP作業系統存在高風險安全漏洞(CVE-2025-66277)，請儘速確認並進行修補</span>
+</summary>
+<div style="padding:10px 15px 15px 35px; border-top:1px dashed #ddd;">
+<div style="margin-bottom:8px; line-height:1.6; color:#444; font-size:0.95em;">[內容說明:]<br>研究人員發現QNAP作業系統存在連結追蹤(Link Following)漏洞(CVE-2025-66277)，未經身分鑑別之遠端攻擊者可利用此漏洞存取未授權之檔案系統路徑，請儘速確認並進行修補。<br><br>[影響平台:]<br>QTS 5.2.x至5.2.8.3350 build 20251216(不含)版本<br>QuTS hero h5.2.x至h5.2.8.3350 build 20251216(不含)版本<br><br>[建議措施:]<br>官方已針對漏洞釋出修復更新，請參考官方說明進行更新，網址如下： <a href="https://www.qnap.com/en/security-advisory/qsa-26-05" target="_blank" rel="noopener noreferrer" title="QNAP官方修復更新說明(另開啟新視窗)">QNAP 官方修復更新說明</a><br><br>[參考資料:]<br>1. <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-66277" target="_blank" rel="noopener noreferrer" title="NVD CVE-2025-66277 漏洞詳細資訊(另開啟新視窗)">NVD：CVE-2025-66277 漏洞詳細資訊</a></div>
 </div>
 </details>
 </div>
 </div>
-<script>
-(function(){
-    var today = new Date();
-    today.setHours(0,0,0,0);
-    document.querySelectorAll('.announcement-item[data-expire]').forEach(function(el){
-        var parts = el.getAttribute('data-expire').split('-');
-        if(parts.length === 3){
-            var exp = new Date(parseInt(parts[0]), parseInt(parts[1])-1, parseInt(parts[2]));
-            if(today > exp){ el.style.display = 'none'; }
-        }
-    });
-})();
-</script>
-<div class="block-card carousel-container soft-border-card" id="blk-center-1" style="border: 1px solid #dde3ec; border-radius: 10px; background: #f9fafc; overflow: hidden;">
-<h2 class="block-title" style="color: #FFFFFF; background-color: #2B358C; padding: 6px 12px; border-radius: 5px; text-align: center;" tabindex="-1">資通安全</h2>
-<style>
-#cr-play-center-1:hover,
-#cr-prev-center-1:hover,
-#cr-next-center-1:hover,
-#cr-dots-center-1 .cr-dot:hover {
-    background-color: #ff9900 !important; color: #000 !important; outline: none !important;
-}
-#cr-play-center-1:focus-visible,
-#cr-prev-center-1:focus-visible,
-#cr-next-center-1:focus-visible,
-#cr-dots-center-1 .cr-dot:focus-visible {
-    background-color: #ff9900 !important; color: #000 !important;
-    outline: 2px solid #fff !important; outline-offset: 1px !important;
-    box-shadow: 0 0 0 4px #000 !important;
-}
-#blk-center-1 .cr-slide a:hover {
-    outline: 3px solid #ff9900 !important; outline-offset: -3px !important;
-}
-#blk-center-1 .cr-slide a:focus-visible {
-    outline: 2px solid #fff !important; outline-offset: -6px !important;
-    box-shadow: inset 0 0 0 5px #000 !important;
-}
-#blk-center-1 .cr-slide:focus-visible {
-    outline: 2px solid #fff !important; outline-offset: -6px !important;
-    box-shadow: inset 0 0 0 5px #000 !important;
-}
-</style>
-<div class="carousel-wrapper" role="region" aria-roledescription="carousel" aria-label="資通安全" style="position: relative; background: transparent; margin-top: 10px; display: grid; grid-template-columns: 1fr; grid-template-rows: auto auto; grid-row-gap: 5px;">
-
-    <!-- Row 2 Background (Visual layer, not focusable) -->
-    <div style="grid-row: 2; grid-column: 1; z-index: 10; background: #e9e9e9; border-top: 1px solid #ccc; width: 100%; height: 100%; pointer-events: none;"></div>
-
-    <!-- TAB 1: Pause/Play -->
-    <button id="cr-play-center-1" aria-label="暫停輪播主圖" title="暫停輪播主圖" style="grid-row: 2; grid-column: 1; justify-self: end; align-self: center; margin-right: 15px; z-index: 30; background: #333; color: #fff; border: none; padding: 4px 10px; border-radius: 4px; cursor: pointer; font-size: 0.85em; font-weight: bold; letter-spacing: 1px;">|| 暫停</button>
-
-    <!-- TAB 2: Prev Arrow -->
-    <button id="cr-prev-center-1" aria-label="上一張照片" title="上一張照片" style="grid-row: 1; grid-column: 1; justify-self: start; align-self: center; z-index: 30; background: rgba(0,0,0,0.4); color: white; border: none; padding: 15px 10px; cursor: pointer; font-size: 1.125em; border-radius: 0 4px 4px 0;">&#10094;</button>
-
-    <!-- TAB 3: Images -->
-    <div id="cr-inner-center-1" style="grid-row: 1; grid-column: 1; display: grid; width: 100%; overflow: hidden; background: transparent; border-radius: 8px; z-index: 15;">
-
-        <div class="cr-slide" id="cr-slide-center-1-0" role="group" aria-roledescription="slide" aria-label="第 1 張，共 6 張" aria-hidden="false" style="grid-area: 1 / 1; align-self: center; opacity: 1; z-index: 10; transition: opacity 0.6s ease-in-out;">
-            <a href="09.html#main_content" target="_self" aria-label="移至 快關！LINE + 語音信箱爆漏洞釀帳號盜用災情" title="移至 快關！LINE + 語音信箱爆漏洞釀帳號盜用災情" tabindex="0" style="display: block; width: 100%;">
-                <img src="images/快關！LINE + 語音信箱爆漏洞釀帳號盜用災情.png" alt="快關！LINE + 語音信箱爆漏洞釀帳號盜用災情" style="width: 100%; height: auto; display: block;">
-            </a>
-        </div>
-        <div class="cr-slide" id="cr-slide-center-1-1" role="group" aria-roledescription="slide" aria-label="第 2 張，共 6 張" aria-hidden="true" style="grid-area: 1 / 1; align-self: center; opacity: 0; z-index: 1; transition: opacity 0.6s ease-in-out;">
-            <a href="05.html#main_content" target="_self" aria-label="移至 校務行政系統4大安全措施" title="移至 校務行政系統4大安全措施" tabindex="-1" style="display: block; width: 100%;">
-                <img src="images/4大安全措施.png" alt="校務行政系統4大安全措施" style="width: 100%; height: auto; display: block;">
-            </a>
-        </div>
-        <div class="cr-slide" id="cr-slide-center-1-2" role="group" aria-roledescription="slide" aria-label="第 3 張，共 6 張" aria-hidden="true" style="grid-area: 1 / 1; align-self: center; opacity: 0; z-index: 1; transition: opacity 0.6s ease-in-out;">
-            <a href="06.html#main_content" target="_self" aria-label="移至 採購資訊設備注意事項" title="移至 採購資訊設備注意事項" tabindex="-1" style="display: block; width: 100%;">
-                <img src="images/資訊設備.png" alt="採購資訊設備注意事項" style="width: 100%; height: auto; display: block;">
-            </a>
-        </div>
-        <div class="cr-slide" id="cr-slide-center-1-3" role="group" aria-roledescription="slide" aria-label="第 4 張，共 6 張" aria-hidden="true" style="grid-area: 1 / 1; align-self: center; opacity: 0; z-index: 1; transition: opacity 0.6s ease-in-out;">
-            <a href="07.html#main_content" target="_self" aria-label="移至 禁用openclaw" title="移至 禁用openclaw" tabindex="-1" style="display: block; width: 100%;">
-                <img src="images/禁用openclaw.png" alt="禁用openclaw" style="width: 100%; height: auto; display: block;">
-            </a>
-        </div>
-        <div class="cr-slide" id="cr-slide-center-1-4" role="group" aria-roledescription="slide" aria-label="第 5 張，共 6 張" aria-hidden="true" style="grid-area: 1 / 1; align-self: center; opacity: 0; z-index: 1; transition: opacity 0.6s ease-in-out;">
-            <a href="08.html#main_content" target="_self" aria-label="移至 校務行政系統密碼修改流程" title="移至 校務行政系統密碼修改流程" tabindex="-1" style="display: block; width: 100%;">
-                <img src="images/校務行政系統密碼修改流程-三多.png" alt="校務行政系統密碼修改流程" style="width: 100%; height: auto; display: block;">
-            </a>
-        </div>
-        <div class="cr-slide" id="cr-slide-center-1-5" role="group" aria-roledescription="slide" aria-label="第 6 張，共 6 張" aria-hidden="true" style="grid-area: 1 / 1; align-self: center; opacity: 0; z-index: 1; transition: opacity 0.6s ease-in-out;">
-            <a href="10.html#main_content" target="_self" aria-label="移至 F5與Fortinet重大資安漏洞" title="移至 F5與Fortinet重大資安漏洞" tabindex="-1" style="display: block; width: 100%;">
-                <img src="images/F5與Fortinet重大資安漏洞.png" alt="F5與Fortinet重大資安漏洞" style="width: 100%; height: auto; display: block;">
-            </a>
-        </div>
-    </div>
-
-    <!-- TAB 4: Next Arrow -->
-    <button id="cr-next-center-1" aria-label="下一張照片" title="下一張照片" style="grid-row: 1; grid-column: 1; justify-self: end; align-self: center; z-index: 30; background: rgba(0,0,0,0.4); color: white; border: none; padding: 15px 10px; cursor: pointer; font-size: 1.125em; border-radius: 4px 0 0 4px;">&#10095;</button>
-
-    <!-- TAB 5: Dots -->
-    <div id="cr-dots-center-1" style="grid-row: 2; grid-column: 1; justify-self: center; align-self: center; z-index: 30; display: flex; gap: 8px; padding: 10px 0;">
-
-        <button class="cr-dot" data-idx="0" aria-label="跳至第 1 張" style="width: 12px; height: 12px; border-radius: 50%; background: #2B358C; border: 2px solid #2B358C; cursor: pointer; padding: 0;"></button>
-        <button class="cr-dot" data-idx="1" aria-label="跳至第 2 張" style="width: 12px; height: 12px; border-radius: 50%; background: #ccc; border: none; cursor: pointer; padding: 0;"></button>
-        <button class="cr-dot" data-idx="2" aria-label="跳至第 3 張" style="width: 12px; height: 12px; border-radius: 50%; background: #ccc; border: none; cursor: pointer; padding: 0;"></button>
-        <button class="cr-dot" data-idx="3" aria-label="跳至第 4 張" style="width: 12px; height: 12px; border-radius: 50%; background: #ccc; border: none; cursor: pointer; padding: 0;"></button>
-        <button class="cr-dot" data-idx="4" aria-label="跳至第 5 張" style="width: 12px; height: 12px; border-radius: 50%; background: #ccc; border: none; cursor: pointer; padding: 0;"></button>
-        <button class="cr-dot" data-idx="5" aria-label="跳至第 6 張" style="width: 12px; height: 12px; border-radius: 50%; background: #ccc; border: none; cursor: pointer; padding: 0;"></button>
-    </div>
-
-    <div aria-live="off" aria-atomic="true" class="sr-only" id="cr-liveregion-center-1" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0;">顯示第 1 張</div>
-
-
-<script>
-(function(){
-    var wrapper = document.getElementById("blk-center-1");
-    if(!wrapper) return;
-    
-    var slides = wrapper.querySelectorAll('.cr-slide');
-    var dots = wrapper.querySelectorAll('.cr-dot');
-    var maxIdx = slides.length - 1;
-    if(maxIdx < 0) return;
-    
-    var currentIdx = 0;
-    var timer = null;
-    var isPlaying = true;
-    
-    var btnPrev = document.getElementById("cr-prev-center-1");
-    var btnNext = document.getElementById("cr-next-center-1");
-    var btnPlay = document.getElementById("cr-play-center-1");
-    var liveRegion = document.getElementById("cr-liveregion-center-1");
-    
-    function showSlide(index, focusAfter) {
-        slides[currentIdx].style.opacity = 0;
-        slides[currentIdx].style.zIndex = 1;
-        slides[currentIdx].setAttribute('aria-hidden', 'true');
-        dots[currentIdx].style.background = "#ccc";
-        dots[currentIdx].style.border = "none";
-        var oldAnchor = slides[currentIdx].querySelector('a');
-        if(oldAnchor) oldAnchor.setAttribute('tabindex', '-1');
-        else slides[currentIdx].setAttribute('tabindex', '-1');
-        
-
-        currentIdx = index;
-        if(currentIdx > maxIdx) currentIdx = 0;
-        if(currentIdx < 0) currentIdx = maxIdx;
-        
-        slides[currentIdx].style.opacity = 1;
-        slides[currentIdx].style.zIndex = 10;
-        slides[currentIdx].setAttribute('aria-hidden', 'false');
-        dots[currentIdx].style.background = "#2B358C";
-        dots[currentIdx].style.border = "2px solid #2B358C";
-        
-        var newSlide = slides[currentIdx];
-        var newAnchor = newSlide.querySelector('a');
-        var announceText = "";
-        
-        if(newAnchor) {
-            newAnchor.setAttribute('tabindex', '0');
-            announceText = newAnchor.getAttribute('aria-label') || "";
-            if(focusAfter) newAnchor.focus();
-        } else {
-            newSlide.setAttribute('tabindex', '0');
-            if(focusAfter) newSlide.focus();
-        }
-        
-        var newImg = newSlide.querySelector('img');
-        if (!announceText && newImg) {
-            announceText = newImg.getAttribute('alt') || newImg.getAttribute('title') || "";
-        }
-        
-        liveRegion.textContent = "目前顯示第 " + (currentIdx + 1) + " 張，共 " + (maxIdx + 1) + " 張：" + announceText;
-    }
-    
-    function nextSlide(focusAfter) { showSlide(currentIdx + 1, focusAfter); }
-    function prevSlide(focusAfter) { showSlide(currentIdx - 1, focusAfter); }
-    
-    function startPlay() {
-        if(timer) clearInterval(timer);
-        timer = setInterval(nextSlide, 5000);
-        isPlaying = true;
-        btnPlay.innerHTML = "|| 暫停";
-        btnPlay.setAttribute("aria-label", "暫停輪播主圖");
-        btnPlay.setAttribute("title", "暫停輪播主圖");
-        liveRegion.setAttribute("aria-live", "off");
-    }
-    function stopPlay(isManual) {
-        if(timer) clearInterval(timer);
-        timer = null;
-        isPlaying = false;
-        btnPlay.innerHTML = "&#9654; 播放";
-        btnPlay.setAttribute("aria-label", "自動輪播主圖");
-        btnPlay.setAttribute("title", "自動輪播主圖");
-        liveRegion.setAttribute("aria-live", "polite");
-        if(isManual) userPaused = true;
-    }
-    
-    btnNext.addEventListener('click', function() { stopPlay(true); nextSlide(true); });
-    btnPrev.addEventListener('click', function() { stopPlay(true); prevSlide(true); });
-    btnPlay.addEventListener('click', function() { 
-        if(isPlaying) { stopPlay(true); } else { userPaused = false; startPlay(); }
-    });
-    
-    dots.forEach(function(dot) {
-        dot.addEventListener('click', function() {
-            stopPlay(true);
-            var targetIdx = parseInt(dot.getAttribute('data-idx'));
-            showSlide(targetIdx, true);
-        });
-    });
-    
-    var userPaused = false;
-    var inner = document.getElementById("cr-inner-center-1");
-    inner.addEventListener('focusin', function() { if(isPlaying) { stopPlay(false); } });
-    inner.addEventListener('focusout', function() { if(!userPaused && !isPlaying) { startPlay(); } });
-    
-    // 尊重「減少動態」系統設定：強制暂停輪播 (CS3230300E AAA)
-    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        stopPlay(true);
-    } else {
-        startPlay();
-    }
-})();
-</script>
 </div>
+<div id="center-1" class="block-card soft-border-card" style="border: 1px solid #dde3ec; border-radius: 10px; background: #f9fafc; overflow: hidden; margin-bottom: 15px;">
+<div style="text-align: center;"><h2 class="block-title" style="color: #FFFFFF; background-color: #2B358C; padding: 6px 12px; border-radius: 5px; text-align: center; margin: 0;" tabindex="-1">資通安全</h2></div>
+<div class="block-content-area" style="padding: 12px 0;">
+
+                        <style>
+                        .crs-btn { background: rgba(0,0,0,0.5); color:#fff; border:none; padding:10px 12px; font-weight:bold; cursor:pointer; transition: 0.2s; font-size:0.9em; display:flex; align-items:center; justify-content:center; }
+                        .crs-arrow { position:absolute; z-index:10; top:50%; transform:translateY(-50%); height: 50px; width: 36px; background: rgba(0,0,0,0.3) !important; }
+                        .crs-arrow:hover, .crs-arrow:focus-visible { background: rgba(0,0,0,0.7) !important; color:#fff !important; }
+                        .crs-btn:hover, .crs-btn:focus-visible { background:#FFBF47 !important; color:#000 !important; }
+                        .crs-btn:focus-visible { outline: 3px solid #000 !important; box-shadow: inset 0 0 0 3px #fff !important; }
+                        .crs-dot:hover { background:#FFBF47 !important; }
+                        .crs-dot:focus-visible { outline: 3px solid #000 !important; box-shadow: inset 0 0 0 3px #fff; border-radius:50%; background:#FFBF47 !important; }
+                        .crs-photo-link:focus-visible { outline: 6px solid #FFBF47 !important; outline-offset: -6px; border-radius: 4px; }
+                        </style>
+                        <div id="crs-wrap-center-1" style="width:100%; border-radius:8px; overflow:hidden; border:1px solid #ddd; position:relative; background:#fff;">
+                          <!-- pause first in DOM = Tab order #1, absolute-positioned to bottom-right visually in control bar -->
+                          <button id="pause-center-1" aria-label="暫停輪播" title="暫停輪播" class="crs-btn" style="position:absolute; bottom:5px; right:8px; z-index:20; border-radius:4px; padding:2px 8px; font-size:0.75em; background:rgba(0,0,0,0.6); color:#fff; border:none; cursor:pointer;">|| 暫停</button>
+                          <div class="carousel-container" id="carousel-center-1" role="region" aria-roledescription="carousel" aria-label="資通安全" style="position:relative; width:100%; overflow:hidden;">
+                            <button id="prev-center-1" aria-label="上一張圖片" title="上一張圖片" class="crs-btn crs-arrow" style="left:0; border-radius:0 4px 4px 0;">&#10094;</button>
+                            <div aria-live="polite" style="overflow:hidden;">
+                              <div class="carousel-track" id="track-center-1" style="display:flex; transition: transform 0.5s ease-in-out;">
+                        
+                                      <div role="group" aria-roledescription="slide" aria-label="第 1 張，共 6 張" style="min-width:100%; box-sizing:border-box;">
+                                        <a href="09.html" aria-label="移至 快關！LINE + 語音信箱爆漏洞釀帳號盜用災情" title="移至 快關！LINE + 語音信箱爆漏洞釀帳號盜用災情" style="display:block; text-align:center;" class="img-link crs-photo-link"><img src="images/快關！LINE + 語音信箱爆漏洞釀帳號盜用災情.png" alt="快關！LINE + 語音信箱爆漏洞釀帳號盜用災情" style="width:100%; height:auto; display:block; object-fit:contain;" /></a>
+                                      </div>
+                            
+                                      <div role="group" aria-roledescription="slide" aria-label="第 2 張，共 6 張" style="min-width:100%; box-sizing:border-box;">
+                                        <a href="05.html" aria-label="移至 校務行政系統4大安全措施" title="移至 校務行政系統4大安全措施" style="display:block; text-align:center;" class="img-link crs-photo-link"><img src="images/4大安全措施.png" alt="校務行政系統4大安全措施" style="width:100%; height:auto; display:block; object-fit:contain;" /></a>
+                                      </div>
+                            
+                                      <div role="group" aria-roledescription="slide" aria-label="第 3 張，共 6 張" style="min-width:100%; box-sizing:border-box;">
+                                        <a href="06.html" aria-label="移至 採購資訊設備注意事項" title="移至 採購資訊設備注意事項" style="display:block; text-align:center;" class="img-link crs-photo-link"><img src="images/資訊設備.png" alt="採購資訊設備注意事項" style="width:100%; height:auto; display:block; object-fit:contain;" /></a>
+                                      </div>
+                            
+                                      <div role="group" aria-roledescription="slide" aria-label="第 4 張，共 6 張" style="min-width:100%; box-sizing:border-box;">
+                                        <a href="07.html" aria-label="移至 禁用openclaw" title="移至 禁用openclaw" style="display:block; text-align:center;" class="img-link crs-photo-link"><img src="images/禁用openclaw.png" alt="禁用openclaw" style="width:100%; height:auto; display:block; object-fit:contain;" /></a>
+                                      </div>
+                            
+                                      <div role="group" aria-roledescription="slide" aria-label="第 5 張，共 6 張" style="min-width:100%; box-sizing:border-box;">
+                                        <a href="08.html" aria-label="移至 校務行政系統密碼修改流程" title="移至 校務行政系統密碼修改流程" style="display:block; text-align:center;" class="img-link crs-photo-link"><img src="images/校務行政系統密碼修改流程-三多.png" alt="校務行政系統密碼修改流程" style="width:100%; height:auto; display:block; object-fit:contain;" /></a>
+                                      </div>
+                            
+                                      <div role="group" aria-roledescription="slide" aria-label="第 6 張，共 6 張" style="min-width:100%; box-sizing:border-box;">
+                                        <a href="10.html" aria-label="移至 F5與Fortinet重大資安漏洞" title="移至 F5與Fortinet重大資安漏洞" style="display:block; text-align:center;" class="img-link crs-photo-link"><img src="images/F5與Fortinet重大資安漏洞.png" alt="F5與Fortinet重大資安漏洞" style="width:100%; height:auto; display:block; object-fit:contain;" /></a>
+                                      </div>
+                            
+                              </div>
+                            </div>
+                            <button id="next-center-1" aria-label="下一張圖片" title="下一張圖片" class="crs-btn crs-arrow" style="right:0; border-radius:4px 0 0 4px;">&#10095;</button>
+                          </div>
+                          <div style="display:flex; align-items:center; justify-content:center; padding:5px 10px; background:#e8e8e8; border-top:1px solid #ccc; position:relative; min-height:32px;">
+                            <div id="dots-center-1" style="display:flex; gap:8px; align-items:center;">
+                              <div class="crs-dot" data-idx="0" style="width:10px; height:10px; border-radius:50%; background:#bbb; cursor:pointer; transition:background 0.2s;" tabindex="0" role="button" aria-label="第1張" aria-pressed="false"></div><div class="crs-dot" data-idx="1" style="width:10px; height:10px; border-radius:50%; background:#bbb; cursor:pointer; transition:background 0.2s;" tabindex="0" role="button" aria-label="第2張" aria-pressed="false"></div><div class="crs-dot" data-idx="2" style="width:10px; height:10px; border-radius:50%; background:#bbb; cursor:pointer; transition:background 0.2s;" tabindex="0" role="button" aria-label="第3張" aria-pressed="false"></div><div class="crs-dot" data-idx="3" style="width:10px; height:10px; border-radius:50%; background:#bbb; cursor:pointer; transition:background 0.2s;" tabindex="0" role="button" aria-label="第4張" aria-pressed="false"></div><div class="crs-dot" data-idx="4" style="width:10px; height:10px; border-radius:50%; background:#bbb; cursor:pointer; transition:background 0.2s;" tabindex="0" role="button" aria-label="第5張" aria-pressed="false"></div><div class="crs-dot" data-idx="5" style="width:10px; height:10px; border-radius:50%; background:#bbb; cursor:pointer; transition:background 0.2s;" tabindex="0" role="button" aria-label="第6張" aria-pressed="false"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <script>
+                        (function(){
+                            var track = document.getElementById("track-center-1");
+                            var btnPause = document.getElementById("pause-center-1");
+                            var btnNext = document.getElementById("next-center-1");
+                            var btnPrev = document.getElementById("prev-center-1");
+                            var wrapDiv = document.getElementById("crs-wrap-center-1");
+                            var dots = document.getElementById("dots-center-1").children;
+                            var photoLinks = document.getElementById("carousel-center-1").querySelectorAll(".crs-photo-link");
+                            var count = 6;
+                            var current = 0;
+                            var timer = null;
+                            var isPaused = false;
+
+                            function update() {
+                                track.style.transform = "translateX(-" + (current * 100) + "%)";
+                                for(var i=0; i<count; i++) {
+                                    dots[i].style.background = (i === current) ? "#2B358C" : "#ccc";
+                                    dots[i].setAttribute("aria-pressed", i === current ? "true" : "false");
+                                    var slideEl = track.children[i].firstElementChild;
+                                    if(slideEl) {
+                                        if(i === current) {
+                                            slideEl.setAttribute("tabindex", "0");
+                                            slideEl.setAttribute("aria-hidden", "false");
+                                        } else {
+                                            slideEl.setAttribute("tabindex", "-1");
+                                            slideEl.setAttribute("aria-hidden", "true");
+                                        }
+                                    }
+                                }
+                            }
+                            function next() { current = (current + 1) % count; update(); }
+                            function prev() { current = (current - 1 + count) % count; update(); }
+                            function play() { if(!isPaused) timer = setInterval(next, 3500); }
+                            function stop() { clearInterval(timer); }
+                            function pause() { stop(); isPaused = true; btnPause.innerHTML = "&#9654; 播放"; btnPause.setAttribute("aria-label","播放輪播"); btnPause.setAttribute("title","播放輪播"); }
+                            function resume() { isPaused = false; btnPause.innerHTML = "|| 暫停"; btnPause.setAttribute("aria-label","暫停輪播"); btnPause.setAttribute("title","暫停輪播"); play(); }
+
+                            /* dots click + keyboard */
+                            for(let i=0; i<count; i++) {
+                                dots[i].addEventListener("click", function() { stop(); current = parseInt(this.dataset.idx); update(); if(!isPaused) play(); });
+                                dots[i].addEventListener("keydown", function(e) { if(e.key==="Enter"||e.key===" "){ e.preventDefault(); this.click(); } });
+                            }
+
+                            /* photo focus → visually pause (update button) without changing isPaused */
+                            var focusPaused = false;
+                            for(var j=0; j<photoLinks.length; j++) {
+                                photoLinks[j].addEventListener("focus", function() {
+                                    if(!isPaused) {
+                                        stop();
+                                        focusPaused = true;
+                                        btnPause.innerHTML = "&#9654; 播放";
+                                        btnPause.setAttribute("aria-label","播放輪播");
+                                        btnPause.setAttribute("title","播放輪播");
+                                    }
+                                });
+                                photoLinks[j].addEventListener("blur", function(e) {
+                                    var newFocus = e.relatedTarget;
+                                    var stillOnPhoto = newFocus && newFocus.classList.contains("crs-photo-link");
+                                    if(!stillOnPhoto && focusPaused) {
+                                        focusPaused = false;
+                                        btnPause.innerHTML = "|| 暫停";
+                                        btnPause.setAttribute("aria-label","暫停輪播");
+                                        btnPause.setAttribute("title","暫停輪播");
+                                        if(!isPaused) play();
+                                    }
+                                });
+                            }
+
+                            /* Pause/play button */
+                            btnPause.addEventListener("click", function() {
+                                if(isPaused) resume(); else pause();
+                            });
+
+                            btnNext.addEventListener("click", function() { stop(); next(); if(!isPaused) play(); });
+                            btnPrev.addEventListener("click", function() { stop(); prev(); if(!isPaused) play(); });
+
+                            /* Mouse hover pauses */
+                            wrapDiv.addEventListener("mouseover", stop);
+                            wrapDiv.addEventListener("mouseout", function() { if(!isPaused) play(); });
+
+                            /* prefers-reduced-motion */
+                            if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) { pause(); }
+                            else { play(); }
+
+                            update();
+                        })();
+                        </script>
+                        </div>
 </div>
 
 </div>
 </main>
-<aside class="col-left"><a href="#al" id="al" accesskey="L" title="左側區塊" class="access-key">:::</a>
-<div class="block-card soft-border-card" id="blk-left-0" style="border: 1px solid #dde3ec; border-radius: 10px; background: #f9fafc; overflow: hidden;">
-<h2 class="block-title" style="color: #FFFFFF; background-color: #2B358C; padding: 6px 12px; border-radius: 5px; text-align: center;" tabindex="-1">數位學習相關網站</h2>
-<ul class="link-list-container">
-<li class="link-list-entry">
-<a href="https://cloud.edu.tw/" target="_blank" aria-label="教育雲數位學習入口 (另開新視窗)" title="教育雲數位學習入口 (另開新視窗)" class="link-list-item single-link">教育雲數位學習入口</a>
-</li>
-<li class="link-list-entry">
-<a href="https://adl.edu.tw/" target="_blank" aria-label="教育部因材網 (另開新視窗)" title="教育部因材網 (另開新視窗)" class="link-list-item single-link">教育部因材網</a>
-</li>
-<li class="link-list-entry">
-<a href="https://scitechvista.nat.gov.tw/" target="_blank" aria-label="科技大觀園 (另開新視窗)" title="科技大觀園 (另開新視窗)" class="link-list-item single-link">科技大觀園</a>
-</li>
-<li class="link-list-entry">
-<a href="https://pts.ntpc.edu.tw/" target="_blank" aria-label="新北市親師生平台 (另開新視窗)" title="新北市親師生平台 (另開新視窗)" class="link-list-item single-link">新北市親師生平台</a>
-</li>
-<li class="link-list-entry">
-<a href="https://moocs.moe.edu.tw/moocs/" target="_blank" aria-label="教育部磨課師平臺 (另開新視窗)" title="教育部磨課師平臺 (另開新視窗)" class="link-list-item single-link">教育部磨課師平臺</a>
-</li>
-<li class="link-list-entry">
-<a href="http://estudy.ntpc.edu.tw/" target="_blank" aria-label="新北市數位學習影音網 (另開新視窗)" title="新北市數位學習影音網 (另開新視窗)" class="link-list-item single-link">新北市數位學習影音網</a>
-</li>
-<li class="link-list-entry">
-<a href="https://pads.moe.edu.tw/" target="_blank" aria-label="推動中小學數位學習精進方案入口網 (另開新視窗)" title="推動中小學數位學習精進方案入口網 (另開新視窗)" class="link-list-item single-link">推動中小學數位學習精進方案入口網</a>
-</li>
-<li class="link-list-entry">
-<a href="https://digit.ntpc.edu.tw/" target="_blank" aria-label="新北星聯盟 (另開新視窗)" title="新北星聯盟 (另開新視窗)" class="link-list-item single-link">新北星聯盟</a>
-</li>
-<li class="link-list-entry">
-<a href="https://isafeevent.moe.edu.tw/" target="_blank" aria-label="全民資訊素養自我評量 (另開新視窗)" title="全民資訊素養自我評量 (另開新視窗)" class="link-list-item single-link">全民資訊素養自我評量</a>
-</li>
-<li class="link-list-entry">
-<a href="https://eliteracy.edu.tw/" target="_blank" aria-label="中小學數位素養教育資源網 (另開新視窗)" title="中小學數位素養教育資源網 (另開新視窗)" class="link-list-item single-link">中小學數位素養教育資源網</a>
-</li>
-</ul>
-</div>
-<div class="block-card soft-border-card" id="blk-left-1" style="border: 1px solid #dde3ec; border-radius: 10px; background: #f9fafc; overflow: hidden;">
-<h2 class="block-title" style="color: #FFFFFF; background-color: #2B358C; padding: 6px 12px; border-radius: 5px; text-align: center;" tabindex="-1">資安法規相關連結</h2>
-<ul class="link-list-container">
-<li class="link-list-entry">
-<a href="https://moda.gov.tw/ACS/laws/faq/630" target="_blank" aria-label="資安法常見問題 (另開新視窗)" title="資安法常見問題 (另開新視窗)" class="link-list-item single-link">資安法常見問題</a>
-</li>
-<li class="link-list-entry">
-<a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0030297" target="_blank" aria-label="資通安全管理法 (另開新視窗)" title="資通安全管理法 (另開新視窗)" class="link-list-item single-link">資通安全管理法</a>
-</li>
-<li class="link-list-entry">
-<a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0030303" target="_blank" aria-label="資通安全管理法施行細則 (另開新視窗)" title="資通安全管理法施行細則 (另開新視窗)" class="link-list-item single-link">資通安全管理法施行細則</a>
-</li>
-<li class="link-list-entry">
-<a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0030304" target="_blank" aria-label="資通安全責任等級分級辦法 (另開新視窗)" title="資通安全責任等級分級辦法 (另開新視窗)" class="link-list-item single-link">資通安全責任等級分級辦法</a>
-</li>
-</ul>
-</div>
-<div class="block-card soft-border-card" id="blk-left-2" style="border: 1px solid #dde3ec; border-radius: 10px; background: #f9fafc; overflow: hidden;">
-<h2 class="block-title" style="color: #FFFFFF; background-color: #2B358C; padding: 6px 12px; border-radius: 5px; text-align: center;" tabindex="-1">宣導網站</h2>
-<ul class="link-list-container">
-<li class="link-list-entry">
-<a href="https://moda.gov.tw/" target="_blank" aria-label="數位發展部 (另開新視窗)" title="數位發展部 (另開新視窗)" class="link-list-item single-link">數位發展部</a>
-</li>
-<li class="link-list-entry">
-<a href="https://accessibility.moda.gov.tw/" target="_blank" aria-label="無障礙網路空間服務網 (另開新視窗)" title="無障礙網路空間服務網 (另開新視窗)" class="link-list-item single-link">無障礙網路空間服務網</a>
-</li>
-</ul>
-</div>
-
-</aside>
 <aside class="col-right">
 
+
 </aside>
 </div>
 
-<footer class="footer">
+<footer class="footer" id="footer">
     <div class="footer-container">
-        <div style="margin-bottom: 5px;">
+        <div style="align-self: flex-start; margin-top: 5px; margin-right: 5px;">
             <a href="#ah" id="ah" accesskey="H" title="下方功能區" class="access-key" style="color:#ccc; text-decoration: none;">:::</a>
         </div>
-        <div style="line-height: 1.8;">
-            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
-                <div style="text-align: left; flex: 1; min-width: 250px;">
-                    <div>
-                        地址：238 新北市樹林區三福街52號<br>
-                        電話：<a href="tel:0226880698" title="撥打電話" style="text-decoration: underline; color: inherit;">(02)2688-0698</a><br>
-                        
-                    </div>
-                </div>
-                
-                <div class="footer-badge-wrap">
-                    
-                </div>
-            </div>
+        <div class="footer-info">
+        <p>地址：238 新北市樹林區三福街52號</p><p>電話：(02)2688-0698</p>
         </div>
         <div class="footer-badge"></div>
     </div>
@@ -720,67 +560,49 @@
     </div>
 </footer>
 <a href="#" id="backToTop" class="back-to-top" title="回到頁面頂端" aria-label="回到頁面頂端">
-    <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" style="display: block;">
-        <path d="M6 16L12 10L18 16M7 7h10" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="7" y1="8" x2="17" y2="8"></line>
+        <polyline points="17 17 12 11 7 17"></polyline>
     </svg>
 </a>
 <script>
     document.getElementById('hamburger').addEventListener('click', function() { var menu = document.getElementById('nav-menu'); menu.classList.toggle('active'); });
     var mybutton = document.getElementById("backToTop");
-    window.onscroll = function() { if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) mybutton.style.display = "flex"; else mybutton.style.display = "none"; };
+    window.onscroll = function() { if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) mybutton.style.display = "block"; else mybutton.style.display = "none"; };
     mybutton.addEventListener('click', function(e) { e.preventDefault(); window.scrollTo({top: 0, behavior: 'smooth'}); var skipLink = document.querySelector('.skip-link'); if (skipLink) skipLink.focus(); else { document.body.tabIndex = -1; document.body.focus(); } });
-    window.addEventListener('load', function() { if(window.location.hash) { var t = document.querySelector(window.location.hash); if(t) { t.focus(); } } });
     
-    document.addEventListener("DOMContentLoaded", function() {
-        var d = new Date();
-        var yyyy = d.getFullYear();
-        var mm = ("0" + (d.getMonth() + 1)).slice(-2);
-        var dd = ("0" + d.getDate()).slice(-2);
-        var today = yyyy + "-" + mm + "-" + dd;
-        
-        var scheds = document.querySelectorAll(".schedulable-block, .schedulable-sitemap-link");
-        scheds.forEach(function(el) {
-            var p_str = el.getAttribute("data-publish");
-            var e_str = el.getAttribute("data-expire");
-            var hidden = false;
-            
-            if (p_str && today < p_str) hidden = true;
-            if (e_str && today > e_str) hidden = true;
-            
-            if (hidden) {
-                el.style.display = "none";
-                el.setAttribute("aria-hidden", "true");
+    // 排程顯示邏輯
+    (function() {
+        // 支援民國年 (如 115-03-27) 或 西元年 (如 2026-03-27)
+        function parseDateString(s) {
+            if (!s) return null;
+            var parts = s.split(/[-/]/); // 支援 - 或 / 分隔
+            if(parts.length !== 3) return null;
+            var y = parseInt(parts[0], 10);
+            if (y < 1000) y += 1911; // 視為民國年
+            var m = parseInt(parts[1], 10) - 1;
+            var d = parseInt(parts[2], 10);
+            return new Date(y, m, d);
+        }
+        var now = new Date();
+        document.querySelectorAll('.schedulable-block').forEach(function(el) {
+            var pubStr = el.getAttribute('data-publish');
+            var expStr = el.getAttribute('data-expire');
+            var show = true;
+            if (pubStr) {
+                var pDate = parseDateString(pubStr);
+                if (pDate && now < pDate) show = false;
             }
+            if (expStr && show) {
+                var eDate = parseDateString(expStr);
+                // 設定為隔天的午夜以涵蓋整個到期日
+                if (eDate) {
+                    eDate.setDate(eDate.getDate() + 1);
+                    if (now >= eDate) show = false;
+                }
+            }
+            if (!show) el.style.display = 'none';
         });
-    });
-</script>
-<script>
-(function(){
-  if(window.self !== window.top){
-    var _h = function(){
-      /* 隱藏所有非內容元素 */
-      var hideSelectors = [
-        '.top-nav','.banner-container','.header','.navbar','.nav-container',
-        '.container-top','.container-bottom',
-        '.footer','.footer-container','.footer-copyright',
-        '.col-left','.col-right',
-        '.skip-links','.skip-link',
-        'a.access-key','.access-key',
-        '#at','#ab','#al','#ar','#ac'
-      ];
-      hideSelectors.forEach(function(s){
-        document.querySelectorAll(s).forEach(function(el){ el.style.cssText += ';display:none!important'; });
-      });
-      /* 讓中欄展開並移除多餘 padding */
-      var center = document.querySelector('.col-center');
-      if(center){ center.style.cssText += ';width:100%!important;flex:1 1 100%!important;max-width:none!important'; }
-      var cont = document.querySelector('.container');
-      if(cont){ cont.style.cssText += ';padding:0!important;margin:0!important'; }
-      document.body.style.cssText += ';margin:0!important;padding:0!important;background:transparent!important';
-    };
-    if(document.readyState==='loading'){ document.addEventListener('DOMContentLoaded',_h); }
-    else { _h(); }
-  }
-})();
+    })();
 </script>
 </body></html>
