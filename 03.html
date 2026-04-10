@@ -293,14 +293,49 @@
                             if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
                                 c.classList.add("paused"); b.innerHTML = "▶"; b.setAttribute("aria-label", "自動播放跑馬燈"); b.setAttribute("title", "自動播放跑馬燈"); w.setAttribute("aria-live", "polite");
                             }
+                            var focusPaused = false;
                             b.addEventListener("click", function() {
                                 if(c.classList.contains("paused")) { c.classList.remove("paused"); b.innerHTML = "⏸"; b.setAttribute("aria-label", "暫停播放跑馬燈"); b.setAttribute("title", "暫停播放跑馬燈"); w.setAttribute("aria-live", "off"); }
                                 else { c.classList.add("paused"); b.innerHTML = "▶"; b.setAttribute("aria-label", "自動播放跑馬燈"); b.setAttribute("title", "自動播放跑馬燈"); w.setAttribute("aria-live", "polite"); }
                             });
-                            w.addEventListener("focusin", function() { c.classList.add("paused"); w.style.outline="3px solid #ff9900"; w.style.boxShadow="0 0 0 5px #000"; });
-                            w.addEventListener("focusout", function() { if(b.innerHTML === "|| 暫停") c.classList.remove("paused"); w.style.outline="none"; w.style.boxShadow="none"; });
-                            w.addEventListener("mouseover", function() { c.classList.add("paused"); });
-                            w.addEventListener("mouseout", function() { if(b.innerHTML === "|| 暫停") c.classList.remove("paused"); });
+                            w.addEventListener("focusin", function() { 
+                                if(!c.classList.contains("paused")) {
+                                    c.classList.add("paused"); 
+                                    b.innerHTML = "▶"; 
+                                    focusPaused = true;
+                                    b.setAttribute("aria-label", "自動播放跑馬燈"); 
+                                    b.setAttribute("title", "自動播放跑馬燈");
+                                }
+                                w.style.outline="3px solid #ff9900"; w.style.boxShadow="0 0 0 5px #000"; 
+                            });
+                            w.addEventListener("focusout", function() { 
+                                if(focusPaused) {
+                                    focusPaused = false;
+                                    c.classList.remove("paused"); 
+                                    b.innerHTML = "⏸";
+                                    b.setAttribute("aria-label", "暫停播放跑馬燈"); 
+                                    b.setAttribute("title", "暫停播放跑馬燈");
+                                }
+                                w.style.outline="none"; w.style.boxShadow="none"; 
+                            });
+                            w.addEventListener("mouseover", function() { 
+                                if(!c.classList.contains("paused")) {
+                                    c.classList.add("paused"); 
+                                    b.innerHTML = "▶";
+                                    focusPaused = true;
+                                    b.setAttribute("aria-label", "自動播放跑馬燈"); 
+                                    b.setAttribute("title", "自動播放跑馬燈");
+                                }
+                            });
+                            w.addEventListener("mouseout", function() { 
+                                if(focusPaused) {
+                                    focusPaused = false;
+                                    c.classList.remove("paused"); 
+                                    b.innerHTML = "⏸";
+                                    b.setAttribute("aria-label", "暫停播放跑馬燈"); 
+                                    b.setAttribute("title", "暫停播放跑馬燈");
+                                }
+                            });
                         })();
                         </script>
                         </div>
