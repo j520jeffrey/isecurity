@@ -29,6 +29,14 @@
     .logo-link { display: flex; align-items: center; text-decoration: none; color: inherit; flex-wrap: wrap; position: relative; padding: 5px; border-radius: 8px; transition: all 0.2s; }
     .phone-link:hover, .phone-link:focus { background-color: #FFBF47; color: #000 !important; cursor: pointer; outline: none; }
     .pending-schedule { display: none !important; }
+    
+    .inner-nav-buttons { display: flex; justify-content: center; gap: 20px; margin-top: 40px; padding: 25px 0; border-top: 1px solid #eee; flex-wrap: wrap; }
+    .nav-btn { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 15px 30px; background: #f8f9fa; color: #333; text-decoration: none; border-radius: 12px; font-weight: bold; border: 1px solid #ccc; transition: all 0.2s; font-size: 1.1em; cursor: pointer; min-width: 120px; }
+    .nav-btn:hover, .nav-btn:focus { background: #FFBF47; color: #000; border-color: #000; outline: none; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transform: translateY(-3px); }
+    .nav-icon-circle { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; background: #555; color: #fff; border-radius: 50%; transition: background 0.2s; }
+    .nav-btn:hover .nav-icon-circle, .nav-btn:focus .nav-icon-circle { background: #000; }
+    .nav-icon-circle svg { width: 20px; height: 20px; }
+
     .logo-link:hover, .logo-link:focus-visible { background-color: #FFBF47; }
     .logo-link:focus-visible { outline: 3px solid #000 !important; box-shadow: inset 0 0 0 3px #fff !important; }
     .school-logo { height: 80px; width: auto; margin-right: 15px; }
@@ -403,7 +411,18 @@
 <div class="block-content-area" style="padding:15px;"><div class="html-content"><p>F5與Fortinet多項設備爆發重大資安漏洞並遭駭客濫用，CISA已將其列入KEV清單，呼籲企業盡速修補以防範RCE及SQL隱碼攻擊。</p>
 <p>F5 的 BIG-IP APM(Access Policy Manager, APM) 及 Fortinet 的 FortiClient EMS(Endpoint Management Server, EMS) 本周皆被發現重大安全漏洞發生駭客攻擊活動。 F5 的 BIG-IP APM 為集中存取管理代理伺服器方案，可讓管理員管理用戶存取公司網路、應用程式和 API 的行為。 BIG-IP APM 遭攻擊的漏洞為 CVE-2025-53521，能讓具有虛擬伺服器存取權限的駭客遠端在 BIG-IP APM 上執行程式碼，CVSS 值為 9.3 。</p>
 
-<p>本漏洞去年被認為是阻斷服務 (DoS) 漏洞，F5 也加以修補，但在今年三月有進一步資訊，促使該公司改列為 RCE 漏洞。經過驗證，原本的修補程式也可以防護 RCE 。 F5 得知本漏洞已發生濫用情形，呼籲用戶檢查 BIG-IP 系統磁碟、日誌和終端機紀錄是否有惡意活動跡象。</p></div></div></div>
+<p>本漏洞去年被認為是阻斷服務 (DoS) 漏洞，F5 也加以修補，但在今年三月有進一步資訊，促使該公司改列為 RCE 漏洞。經過驗證，原本的修補程式也可以防護 RCE 。 F5 得知本漏洞已發生濫用情形，呼籲用戶檢查 BIG-IP 系統磁碟、日誌和終端機紀錄是否有惡意活動跡象。</p></div>
+<div class="inner-nav-buttons">
+    <a href="javascript:history.back()" class="nav-btn" title="返回前一個瀏覽頁面">
+        <span class="nav-icon-circle"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z"/></svg></span>
+        上一頁
+    </a>
+    <a href="./" class="nav-btn" title="返回首頁，重新開始瀏覽">
+        <span class="nav-icon-circle"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z"/></svg></span>
+        回首頁
+    </a>
+</div>
+</div></div>
 </div>
 </main>
 <aside class="col-right">
