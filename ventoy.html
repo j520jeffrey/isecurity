@@ -16,7 +16,7 @@
             --radius: 1.5rem;
             --font-main: 'Noto Sans TC', sans-serif;
             --bg-body: #ffffff;
-            --card-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+            --card-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
         }
 
         
@@ -26,15 +26,35 @@
         .theme-primary-text { color: var(--primary) !important; }
         .theme-primary-bg { background-color: var(--primary) !important; }
         .theme-card-shadow { box-shadow: var(--card-shadow) !important; }
+        
+        /* Global Interactivity */
+        a { transition: all 0.3s ease; cursor: pointer; }
+        a:hover { opacity: 0.8; }
+        button { cursor: pointer; }
+        
+        .nav-link { position: relative; }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--primary);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        .nav-link:hover::after { transform: scaleX(1); }
+        .nav-link:hover { color: var(--primary) !important; }
     </style>
 </head>
-<body class="selection:bg-blue-100 selection:text-blue-600">
+<body class="selection:bg-blue-100 selection:text-blue-600 overflow-x-hidden">
 
     <nav class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-20">
             <div class="flex items-center">
-                <a href="#" class="text-2xl font-black tracking-tight" style="color: #e11d48;">
+                <a href="#" class="text-2xl font-black tracking-tight hover:scale-105 transition" style="color: #e11d48;">
                     Ventoy 簡易還原
                 </a>
             </div>
@@ -42,37 +62,37 @@
                 
                 <a href="#01" 
                    
-                   class="text-slate-600 hover:text-blue-600 font-medium transition duration-300">
+                   class="nav-link text-slate-600 font-medium transition duration-300">
                     系統簡介
                 </a>
                 
                 <a href="#02" 
                    
-                   class="text-slate-600 hover:text-blue-600 font-medium transition duration-300">
+                   class="nav-link text-slate-600 font-medium transition duration-300">
                     核心功能
                 </a>
                 
                 <a href="#03" 
                    
-                   class="text-slate-600 hover:text-blue-600 font-medium transition duration-300">
+                   class="nav-link text-slate-600 font-medium transition duration-300">
                     基本工具
                 </a>
                 
                 <a href="#04" 
                    
-                   class="text-slate-600 hover:text-blue-600 font-medium transition duration-300">
+                   class="nav-link text-slate-600 font-medium transition duration-300">
                     進階部署
                 </a>
                 
                 <a href="#05" 
                    
-                   class="text-slate-600 hover:text-blue-600 font-medium transition duration-300">
+                   class="nav-link text-slate-600 font-medium transition duration-300">
                     相關影片
                 </a>
                 
             </div>
             <div class="md:hidden flex items-center">
-                 <button class="text-slate-600"><i class="fa-solid fa-bars text-2xl"></i></button>
+                 <button class="text-slate-600 hover:theme-primary-text transition"><i class="fa-solid fa-bars text-2xl"></i></button>
             </div>
         </div>
     </div>
@@ -114,12 +134,12 @@
 
         <div class="flex flex-wrap justify-center gap-10">
             
-            <div class="group bg-white theme-rounded overflow-hidden theme-card-shadow hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-slate-100 flex flex-col w-full md:w-[calc(50%-2.5rem)] lg:w-[calc(33.33%-2.5rem)] max-w-sm">
+            <div class="group bg-white theme-rounded overflow-hidden theme-card-shadow hover:shadow-2xl transition duration-500 transform hover:-translate-y-3 border border-slate-100 flex flex-col w-full md:w-[calc(50%-2.5rem)] lg:w-[calc(33.33%-2.5rem)] max-w-sm cursor-pointer">
                 
                 
 
                 <div class="p-8 flex-grow flex flex-col">
-                    <h3 class="text-2xl font-bold mb-4 group-hover:theme-primary-text transition">還原模式</h3>
+                    <h3 class="text-2xl font-bold mb-4 group-hover:theme-primary-text transition duration-300">還原模式</h3>
                     <div class="text-slate-500 leading-relaxed mb-4">
                         手動還原<br>
 每次還原<br>
@@ -130,12 +150,12 @@
                 </div>
             </div>
             
-            <div class="group bg-white theme-rounded overflow-hidden theme-card-shadow hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-slate-100 flex flex-col w-full md:w-[calc(50%-2.5rem)] lg:w-[calc(33.33%-2.5rem)] max-w-sm">
+            <div class="group bg-white theme-rounded overflow-hidden theme-card-shadow hover:shadow-2xl transition duration-500 transform hover:-translate-y-3 border border-slate-100 flex flex-col w-full md:w-[calc(50%-2.5rem)] lg:w-[calc(33.33%-2.5rem)] max-w-sm cursor-pointer">
                 
                 
 
                 <div class="p-8 flex-grow flex flex-col">
-                    <h3 class="text-2xl font-bold mb-4 group-hover:theme-primary-text transition">清理資料碟</h3>
+                    <h3 class="text-2xl font-bold mb-4 group-hover:theme-primary-text transition duration-300">清理資料碟</h3>
                     <div class="text-slate-500 leading-relaxed mb-4">
                         每次開機清理<br>
 指定日期清理<br>
@@ -147,12 +167,12 @@
                 </div>
             </div>
             
-            <div class="group bg-white theme-rounded overflow-hidden theme-card-shadow hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-slate-100 flex flex-col w-full md:w-[calc(50%-2.5rem)] lg:w-[calc(33.33%-2.5rem)] max-w-sm">
+            <div class="group bg-white theme-rounded overflow-hidden theme-card-shadow hover:shadow-2xl transition duration-500 transform hover:-translate-y-3 border border-slate-100 flex flex-col w-full md:w-[calc(50%-2.5rem)] lg:w-[calc(33.33%-2.5rem)] max-w-sm cursor-pointer">
                 
                 
 
                 <div class="p-8 flex-grow flex flex-col">
-                    <h3 class="text-2xl font-bold mb-4 group-hover:theme-primary-text transition">系統保護</h3>
+                    <h3 class="text-2xl font-bold mb-4 group-hover:theme-primary-text transition duration-300">系統保護</h3>
                     <div class="text-slate-500 leading-relaxed mb-4">
                         隱藏資料碟<br>
 隱藏防護<br>
@@ -179,18 +199,18 @@
 
         <div class="flex flex-wrap justify-center gap-10">
             
-            <div class="group bg-white theme-rounded overflow-hidden theme-card-shadow hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-slate-100 flex flex-col w-full md:w-[calc(50%-2.5rem)] lg:w-[calc(33.33%-2.5rem)] max-w-sm">
+            <div class="group bg-white theme-rounded overflow-hidden theme-card-shadow hover:shadow-2xl transition duration-500 transform hover:-translate-y-3 border border-slate-100 flex flex-col w-full md:w-[calc(50%-2.5rem)] lg:w-[calc(33.33%-2.5rem)] max-w-sm cursor-pointer">
                 
                 
                 <div class="aspect-video overflow-hidden relative bg-slate-100">
                     
                     <img src="https://vsrs2026.github.io/images/usb_maker.png" alt="工具碟製作工具" 
-                         class="w-full h-full object-contain group-hover:scale-110 transition duration-500">
+                         class="w-full h-full object-contain group-hover:scale-110 transition duration-700">
                 </div>
                 
 
                 <div class="p-8 flex-grow flex flex-col">
-                    <h3 class="text-2xl font-bold mb-4 group-hover:theme-primary-text transition">工具碟製作工具</h3>
+                    <h3 class="text-2xl font-bold mb-4 group-hover:theme-primary-text transition duration-300">工具碟製作工具</h3>
                     <div class="text-slate-500 leading-relaxed mb-4">
                         方便製作 USB 維護工具碟
                     </div>
@@ -199,18 +219,18 @@
                 </div>
             </div>
             
-            <div class="group bg-white theme-rounded overflow-hidden theme-card-shadow hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-slate-100 flex flex-col w-full md:w-[calc(50%-2.5rem)] lg:w-[calc(33.33%-2.5rem)] max-w-sm">
+            <div class="group bg-white theme-rounded overflow-hidden theme-card-shadow hover:shadow-2xl transition duration-500 transform hover:-translate-y-3 border border-slate-100 flex flex-col w-full md:w-[calc(50%-2.5rem)] lg:w-[calc(33.33%-2.5rem)] max-w-sm cursor-pointer">
                 
                 
                 <div class="aspect-video overflow-hidden relative bg-slate-100">
                     
                     <img src="https://vsrs2026.github.io/images/vhdx_generator.png" alt="VHDX 產生器" 
-                         class="w-full h-full object-contain group-hover:scale-110 transition duration-500">
+                         class="w-full h-full object-contain group-hover:scale-110 transition duration-700">
                 </div>
                 
 
                 <div class="p-8 flex-grow flex flex-col">
-                    <h3 class="text-2xl font-bold mb-4 group-hover:theme-primary-text transition">VHDX 產生器</h3>
+                    <h3 class="text-2xl font-bold mb-4 group-hover:theme-primary-text transition duration-300">VHDX 產生器</h3>
                     <div class="text-slate-500 leading-relaxed mb-4">
                         製作 VHDX 虛擬硬碟檔，可匯入驅動
                     </div>
@@ -219,18 +239,18 @@
                 </div>
             </div>
             
-            <div class="group bg-white theme-rounded overflow-hidden theme-card-shadow hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-slate-100 flex flex-col w-full md:w-[calc(50%-2.5rem)] lg:w-[calc(33.33%-2.5rem)] max-w-sm">
+            <div class="group bg-white theme-rounded overflow-hidden theme-card-shadow hover:shadow-2xl transition duration-500 transform hover:-translate-y-3 border border-slate-100 flex flex-col w-full md:w-[calc(50%-2.5rem)] lg:w-[calc(33.33%-2.5rem)] max-w-sm cursor-pointer">
                 
                 
                 <div class="aspect-video overflow-hidden relative bg-slate-100">
                     
                     <img src="https://vsrs2026.github.io/images/recovery_system_installer.png" alt="裝機工具" 
-                         class="w-full h-full object-contain group-hover:scale-110 transition duration-500">
+                         class="w-full h-full object-contain group-hover:scale-110 transition duration-700">
                 </div>
                 
 
                 <div class="p-8 flex-grow flex flex-col">
-                    <h3 class="text-2xl font-bold mb-4 group-hover:theme-primary-text transition">裝機工具</h3>
+                    <h3 class="text-2xl font-bold mb-4 group-hover:theme-primary-text transition duration-300">裝機工具</h3>
                     <div class="text-slate-500 leading-relaxed mb-4">
                         快速部署與安裝 Ventoy 簡易還原系統核心
                     </div>
@@ -239,18 +259,18 @@
                 </div>
             </div>
             
-            <div class="group bg-white theme-rounded overflow-hidden theme-card-shadow hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-slate-100 flex flex-col w-full md:w-[calc(50%-2.5rem)] lg:w-[calc(33.33%-2.5rem)] max-w-sm">
+            <div class="group bg-white theme-rounded overflow-hidden theme-card-shadow hover:shadow-2xl transition duration-500 transform hover:-translate-y-3 border border-slate-100 flex flex-col w-full md:w-[calc(50%-2.5rem)] lg:w-[calc(33.33%-2.5rem)] max-w-sm cursor-pointer">
                 
                 
                 <div class="aspect-video overflow-hidden relative bg-slate-100">
                     
                     <img src="https://vsrs2026.github.io/images/system_config_tool.png" alt="系統設定中心" 
-                         class="w-full h-full object-contain group-hover:scale-110 transition duration-500">
+                         class="w-full h-full object-contain group-hover:scale-110 transition duration-700">
                 </div>
                 
 
                 <div class="p-8 flex-grow flex flex-col">
-                    <h3 class="text-2xl font-bold mb-4 group-hover:theme-primary-text transition">系統設定中心</h3>
+                    <h3 class="text-2xl font-bold mb-4 group-hover:theme-primary-text transition duration-300">系統設定中心</h3>
                     <div class="text-slate-500 leading-relaxed mb-4">
                         圖形化介面，快速調整各項設定與功能開關
                     </div>
@@ -259,18 +279,18 @@
                 </div>
             </div>
             
-            <div class="group bg-white theme-rounded overflow-hidden theme-card-shadow hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-slate-100 flex flex-col w-full md:w-[calc(50%-2.5rem)] lg:w-[calc(33.33%-2.5rem)] max-w-sm">
+            <div class="group bg-white theme-rounded overflow-hidden theme-card-shadow hover:shadow-2xl transition duration-500 transform hover:-translate-y-3 border border-slate-100 flex flex-col w-full md:w-[calc(50%-2.5rem)] lg:w-[calc(33.33%-2.5rem)] max-w-sm cursor-pointer">
                 
                 
                 <div class="aspect-video overflow-hidden relative bg-slate-100">
                     
                     <img src="https://vsrs2026.github.io/images/vhdx_maintain_tool.png" alt="VHDX 維護工具" 
-                         class="w-full h-full object-contain group-hover:scale-110 transition duration-500">
+                         class="w-full h-full object-contain group-hover:scale-110 transition duration-700">
                 </div>
                 
 
                 <div class="p-8 flex-grow flex flex-col">
-                    <h3 class="text-2xl font-bold mb-4 group-hover:theme-primary-text transition">VHDX 維護工具</h3>
+                    <h3 class="text-2xl font-bold mb-4 group-hover:theme-primary-text transition duration-300">VHDX 維護工具</h3>
                     <div class="text-slate-500 leading-relaxed mb-4">
                         日常維護管理工具，一鍵完成虛擬硬碟操作
                     </div>
@@ -293,18 +313,18 @@
 
         <div class="flex flex-wrap justify-center gap-10">
             
-            <div class="group bg-white theme-rounded overflow-hidden theme-card-shadow hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-slate-100 flex flex-col w-full md:w-[calc(50%-2.5rem)] lg:w-[calc(33.33%-2.5rem)] max-w-sm">
+            <div class="group bg-white theme-rounded overflow-hidden theme-card-shadow hover:shadow-2xl transition duration-500 transform hover:-translate-y-3 border border-slate-100 flex flex-col w-full md:w-[calc(50%-2.5rem)] lg:w-[calc(33.33%-2.5rem)] max-w-sm cursor-pointer">
                 
                 
                 <div class="aspect-video overflow-hidden relative bg-slate-100">
                     
                     <img src="https://vsrs2026.github.io/images/pxe_installer.png" alt="XE 大量部署工具" 
-                         class="w-full h-full object-contain group-hover:scale-110 transition duration-500">
+                         class="w-full h-full object-contain group-hover:scale-110 transition duration-700">
                 </div>
                 
 
                 <div class="p-8 flex-grow flex flex-col">
-                    <h3 class="text-2xl font-bold mb-4 group-hover:theme-primary-text transition">XE 大量部署工具</h3>
+                    <h3 class="text-2xl font-bold mb-4 group-hover:theme-primary-text transition duration-300">XE 大量部署工具</h3>
                     <div class="text-slate-500 leading-relaxed mb-4">
                         配合 iVentoy，可透過 PXE 開機進行基本系統裝機作業，後續可搭配 TCP Commander 進行大量部署作業，適合電腦教室的環境。
                     </div>
@@ -313,18 +333,18 @@
                 </div>
             </div>
             
-            <div class="group bg-white theme-rounded overflow-hidden theme-card-shadow hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-slate-100 flex flex-col w-full md:w-[calc(50%-2.5rem)] lg:w-[calc(33.33%-2.5rem)] max-w-sm">
+            <div class="group bg-white theme-rounded overflow-hidden theme-card-shadow hover:shadow-2xl transition duration-500 transform hover:-translate-y-3 border border-slate-100 flex flex-col w-full md:w-[calc(50%-2.5rem)] lg:w-[calc(33.33%-2.5rem)] max-w-sm cursor-pointer">
                 
                 
                 <div class="aspect-video overflow-hidden relative bg-slate-100">
                     
                     <img src="https://vsrs2026.github.io/images/tcp_commander.png" alt="TCP Commander" 
-                         class="w-full h-full object-contain group-hover:scale-110 transition duration-500">
+                         class="w-full h-full object-contain group-hover:scale-110 transition duration-700">
                 </div>
                 
 
                 <div class="p-8 flex-grow flex flex-col">
-                    <h3 class="text-2xl font-bold mb-4 group-hover:theme-primary-text transition">TCP Commander</h3>
+                    <h3 class="text-2xl font-bold mb-4 group-hover:theme-primary-text transition duration-300">TCP Commander</h3>
                     <div class="text-slate-500 leading-relaxed mb-4">
                         可遠端同時對多台電腦進行維護與部署作業，省去逐一處理的繁瑣時間，以高效率的方式進行管理。
                     </div>
@@ -412,7 +432,7 @@
 
 
     <!-- Back to Top Button -->
-    <button id="backToTop" class="fixed bottom-8 right-8 z-50 p-4 rounded-full bg-blue-600 text-white shadow-2xl hover:bg-blue-700 transition-all duration-300 opacity-0 pointer-events-none translate-y-10" aria-label="返回頂端">
+    <button id="backToTop" class="fixed bottom-8 right-8 z-50 p-4 rounded-full theme-primary-bg text-white shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 opacity-0 pointer-events-none translate-y-10" aria-label="返回頂端">
         <i class="fa-solid fa-arrow-up text-xl"></i>
     </button>
 
