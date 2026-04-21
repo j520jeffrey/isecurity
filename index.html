@@ -224,6 +224,103 @@
         .footer-badge { justify-content: flex-start !important; }
     }
 </style>
+<script>
+
+        function initLogoSlider(id) {
+            const track = document.getElementById('logo-track-' + id);
+            const container = document.getElementById('logo-slider-' + id);
+            const dotsContainer = document.getElementById('logo-dots-' + id);
+            if (!track || !container) return;
+            
+            const items = track.children;
+            const itemCount = items.length;
+            let currentIndex = 0;
+            const GAP = 16;
+            const BTN_W = 44 + 8; // button width + gap between button and viewport
+            
+            function getViewportWidth() {
+                // Read from stable outer container, subtract two buttons
+                const w = container.offsetWidth - BTN_W * 2;
+                return w > 0 ? w : 200;
+            }
+            
+            function getVisibleCount(vpWidth) {
+                if (vpWidth > 900) return 5;
+                if (vpWidth > 700) return 4;
+                if (vpWidth > 450) return 3;
+                if (vpWidth > 260) return 2;
+                return 1;
+            }
+            
+            function updateSlider() {
+                const vpWidth = getViewportWidth();
+                const visible = getVisibleCount(vpWidth);
+                const maxIndex = Math.max(0, itemCount - visible);
+                if (currentIndex > maxIndex) currentIndex = maxIndex;
+                
+                // Item width fills viewport exactly — computed once from stable outer container
+                const itemWidth = Math.floor((vpWidth - GAP * (visible - 1)) / visible);
+                
+                for (let i = 0; i < items.length; i++) {
+                    items[i].style.flex = '0 0 ' + itemWidth + 'px';
+                    items[i].style.maxWidth = itemWidth + 'px';
+                }
+                
+                const btns = container.querySelectorAll('.logo-btn-' + id);
+                if (itemCount <= visible) {
+                    track.style.justifyContent = 'center';
+                    btns.forEach(btn => btn.style.display = 'none');
+                    if (dotsContainer) dotsContainer.style.display = 'none';
+                    currentIndex = 0;
+                } else {
+                    track.style.justifyContent = 'flex-start';
+                    btns.forEach(btn => btn.style.display = 'flex');
+                    if (dotsContainer) dotsContainer.style.display = 'flex';
+                }
+
+                // Force reflow and read actual rendered width (includes any border/padding)
+                const actualW = items[0] ? items[0].offsetWidth : itemWidth;
+                const offset = currentIndex * (actualW + GAP);
+                track.style.transform = 'translateX(-' + offset + 'px)';
+                
+                // Update dots
+                if (dotsContainer) {
+                    const pageCount = Math.ceil(itemCount / visible);
+                    const activePage = Math.floor(currentIndex / visible);
+                    dotsContainer.innerHTML = '';
+                    for (let i = 0; i < pageCount; i++) {
+                        const dot = document.createElement('button');
+                        dot.className = 'logo-dot-' + id + (i === activePage ? ' active' : '');
+                        dot.setAttribute('aria-label', '移至第 ' + (i+1) + ' 頁標誌');
+                        dot.onclick = (function(page) { return function() { currentIndex = page * visible; updateSlider(); }; })(i);
+                        dotsContainer.appendChild(dot);
+                    }
+                }
+            }
+            
+            window.addEventListener('resize', updateSlider);
+            // Use requestAnimationFrame to ensure layout is complete before first measure
+            requestAnimationFrame(updateSlider);
+            
+            window['moveLogoSlider' + id] = function(dir) {
+                const vpWidth = getViewportWidth();
+                const visible = getVisibleCount(vpWidth);
+                currentIndex += dir * visible;
+                if (currentIndex < 0) currentIndex = 0;
+                const max = Math.max(0, itemCount - visible);
+                if (currentIndex > max) currentIndex = 0;
+                updateSlider();
+            };
+        }
+        
+        // Handle global click for moveButtons
+        function moveLogoSlider(id, dir) {
+            if (window['moveLogoSlider' + id]) {
+                window['moveLogoSlider' + id](dir);
+            }
+        }
+        
+</script>
 </head><body>
 <a href="#main_content" class="skip-link">跳到主要內容區塊</a>
 <div class="top-nav">
@@ -420,7 +517,7 @@
 <div class="attachment-area">
   <div class="attachment-header">📎 附件下載：</div>
   <div class="attachment-list">
-    <a href="公文.pdf" target="_blank" class="attachment-card" aria-label="下載附件 公文.pdf (另開新視窗)" title="下載附件 公文.pdf (另開新視窗)">
+    <a href="files/公文.pdf" target="_blank" class="attachment-card" aria-label="下載附件 公文.pdf (另開新視窗)" title="下載附件 公文.pdf (另開新視窗)">
                                       <span class="file-icon">📄</span>
                                       <span class="file-name">公文.pdf</span>
                                       <span class="file-badge">PDF</span>
